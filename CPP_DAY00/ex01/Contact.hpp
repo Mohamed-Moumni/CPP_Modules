@@ -6,13 +6,21 @@
 class Contact
 {
     private:
-        std:: string first_name;
-        std:: string last_name;
+        int     inputError;
+        std:: string fname;
+        std:: string lname;
         std:: string nickname;
-        std:: string phone_number;
-        std:: string darkest_secret;
+        std:: string phNumber;
+        std:: string dark_secret;
     public:
-
+        Contact(void);
+        ~Contact(void);
+        Contact save(void);
+        void    print_contact(void);
+        int     check_Error(void);
+        void    print_field(void);
 };
 
 #endif
+
+

@@ -6,19 +6,19 @@ FLAGS = -Wall -Wextra -Werror
 
 STD_COMP = -std=c++98
 
-SRC = 
+SRC = main.cpp PhoneBook.cpp Contact.cpp 
 
-HEADER = 
+HEADER = PhoneBook.hpp Contact.hpp
 
-OBJ = $(SRC:.c=.o)
+OBJ = $(SRC:.cpp=.o)
 
 all: $(NAME)
 
-$(NAME):$(SRC)
+$(NAME):$(OBJ)
 	$(CPP) $(FLAGS) $(STD_COMP) -o $(NAME) $(OBJ)
 
-%.o:%.c $(HEADER)
-	$(CPP) $(FLAGS) $(STD_COMP) -c $(SRC)
+%.o:%.cpp $(HEADER)
+	$(CPP) $(FLAGS) $(STD_COMP) -c $< -o $@
 
 clean:
 	rm -f $(OBJ)
