@@ -16,8 +16,8 @@ class Contact
         Contact(void);
         ~Contact(void);
         Contact save(void);
-        void    print_contact(void);
-        int     check_Error(void);
+        void    print_contacts(void);
+        bool    check_Error(void);
         void    print_field(void);
 };
 
