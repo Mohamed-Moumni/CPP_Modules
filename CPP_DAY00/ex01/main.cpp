@@ -1,5 +1,3 @@
-#include <iostream>
-#include <string>
 #include "PhoneBook.hpp"
 #include "Contact.hpp"
 
@@ -10,7 +8,7 @@ int main(void)
 
     std::cout << "Welcome To The AwesomePhoneBook Program." << std::endl;
     std::cout << "You Can Choose one of the following Operation." << std::endl;
-    std::cout << "ADD or SEARCH or EXIT" << std::endl;
+    std::cout << "ADD, SEARCH, EXIT" << std::endl;
     while (getline(std::cin,input))
     {
         if (std::cin.eof())
@@ -25,14 +23,17 @@ int main(void)
         }
         else if (!input.compare("SEARCH"))
         {
-            phone_book.search_contact();   
+            phone_book.search_contact();
         }
         else if (!input.compare("EXIT"))
         {
             break ;
         }
-        std::cout << "You Can Choose one of the following Operation." << std::endl;
-        std::cout << "ADD or SEARCH or EXIT." << std::endl;
+        if (!std::cin.eof())
+        {
+            std::cout << "You Can Choose one of the following Operation." << std::endl;
+            std::cout << "ADD, SEARCH, EXIT." << std::endl;
+        }
     }
     return (0);
 }

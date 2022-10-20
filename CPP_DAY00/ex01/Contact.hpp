@@ -2,6 +2,8 @@
 #define CONTACT_HPP
 
 #include <string>
+#include <iostream>
+#include <iomanip>
 
 class Contact
 {
@@ -18,7 +20,7 @@ class Contact
         Contact save(void);
         void    print_contacts(void);
         bool    check_Error(void);
-        void    print_field(void);
+        void    print_one_contact(void);
 };
 
 #endif
