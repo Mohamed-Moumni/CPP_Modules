@@ -71,7 +71,7 @@ Contact Contact ::save(void)
     return (c);
 }
 
-void    Contact::print_contacts(void)
+void    Contact::print_contacts(void) const
 {
     if (this->fname.size() <= 10)
         std::cout << std::setw(10) << this->fname << "|";
@@ -89,7 +89,7 @@ void    Contact::print_contacts(void)
         std::cout << nickname.substr(0,9) << "." << "|";
 }
 
-void    Contact::print_one_contact(void)
+void    Contact::print_one_contact(void) const
 {
     std::cout << "First Name :" << this->fname << std::endl;
     std::cout << "Last Name : "<< this->lname << std::endl;

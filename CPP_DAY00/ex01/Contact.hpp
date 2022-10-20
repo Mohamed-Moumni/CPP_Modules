@@ -18,9 +18,9 @@ class Contact
         Contact(void);
         ~Contact(void);
         Contact save(void);
-        void    print_contacts(void);
+        void    print_contacts(void) const;
         bool    check_Error(void);
-        void    print_one_contact(void);
+        void    print_one_contact(void) const;
 };
 
 #endif
