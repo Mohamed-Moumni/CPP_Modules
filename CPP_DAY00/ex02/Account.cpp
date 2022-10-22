@@ -1,6 +1,19 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   Account.cpp                                        :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: mmoumni <mmoumni@student.42.fr>            +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2022/10/22 08:41:46 by mmoumni           #+#    #+#             */
+/*   Updated: 2022/10/22 08:41:49 by mmoumni          ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "Account.hpp"
 #include<iostream>
 #include<iomanip>
+#include<ctime>
 
 int Account::_nbAccounts = 0;
 int Account::_totalAmount = 0;
@@ -9,11 +22,11 @@ int Account::_totalNbWithdrawals = 0;
 
 void	Account::_displayTimestamp( void )
 {
-    std::time_t time = std::chrono::system_clock::to_time_t(std::chrono::system_clock::now());
-    struct std::tm * ptm = std::localtime(&time);
-
-    std::cout << "[" << std::put_time(ptm, "%Y") << std::put_time(ptm, "%m") << 
-    std::put_time(ptm, "%d") << "_" << std::put_time(ptm,"%I") << std::put_time(ptm, "%M") << std::put_time(ptm, "%S"); 
+    char buffer_time[20];
+    std::time_t tim = time(NULL);
+    struct std::tm * ptm = std::localtime(&tim);
+    strftime(buffer_time, 20, "%Y%m%d_%H%M%S", ptm);
+    std::cout << "[" << buffer_time << "]";
 }
 
 int Account::checkAmount( void ) const
