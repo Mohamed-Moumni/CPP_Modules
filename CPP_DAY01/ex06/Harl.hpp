@@ -1,28 +1,32 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   HumanA.hpp                                         :+:      :+:    :+:   */
+/*   Harl.hpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mmoumni <mmoumni@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/10/24 20:12:01 by mmoumni           #+#    #+#             */
-/*   Updated: 2022/10/25 09:52:21 by mmoumni          ###   ########.fr       */
+/*   Created: 2022/10/25 21:39:46 by mmoumni           #+#    #+#             */
+/*   Updated: 2022/10/25 22:04:14 by mmoumni          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef HUMANA_HPP
-#define HUMANA_HPP
+#ifndef HARL_HPP
+#define HARL_HPP
 
-#include "Weapon.hpp"
+#include<iostream>
 
-class HumanA
+class Harl
 {
     private:
-        std::string name;
-        Weapon & weapon;
+        void    debug( void );
+        void    info( void );
+        void    warning( void );
+        void    error( void );
     public:
-        HumanA(std::string, Weapon & _weapon);
-        void    attack(void);        
+        void    complain( std::string level );
+        void    other(void);
 };
+
+typedef void (Harl::*poinMemberFunc)(void); 
 
 #endif

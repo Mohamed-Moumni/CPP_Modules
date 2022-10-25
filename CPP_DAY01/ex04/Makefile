@@ -1,4 +1,4 @@
-NAME = Unnecessary_violence
+NAME = Sed_is_For_Losers
 
 CPP = c++
 
@@ -6,9 +6,9 @@ FLAGS = -Wall -Wextra -Werror
 
 STD_COMP = -std=c++98
 
-SRC = main.cpp Weapon.cpp HumanA.cpp HumanB.cpp
+SRC = main.cpp
 
-HEADER = Weapon.hpp HumanA.hpp HumanB.hpp
+HEADER = 
 
 OBJ = $(SRC:.cpp=.o)
 
