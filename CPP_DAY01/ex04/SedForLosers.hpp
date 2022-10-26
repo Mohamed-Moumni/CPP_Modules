@@ -1,31 +1,21 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Harl.hpp                                           :+:      :+:    :+:   */
+/*   SedForLosers.hpp                                   :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mmoumni <mmoumni@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/10/25 13:24:21 by mmoumni           #+#    #+#             */
-/*   Updated: 2022/10/26 17:19:14 by mmoumni          ###   ########.fr       */
+/*   Created: 2022/10/26 11:09:10 by mmoumni           #+#    #+#             */
+/*   Updated: 2022/10/26 15:06:58 by mmoumni          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef HARL_HPP
-#define HARL_HPP
+#ifndef SEDFORLOSERS_HPP
+#define SEDFORLOSERS_HPP
 
 #include<iostream>
+#include<string>
+#include<fstream>
 
-class Harl
-{
-    private:
-        void    debug( void );
-        void    info( void );
-        void    warning( void );
-        void    error( void );
-    public:
-        void    complain( std::string level );
-};
-
-typedef void (Harl::*poinMemberFunc)(void); 
-
+void    sed_for_losers(std::ofstream &fout, std::string &content, std::string &s1, std::string &s2);
 #endif

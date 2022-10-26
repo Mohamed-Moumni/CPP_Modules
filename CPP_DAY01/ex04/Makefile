@@ -6,9 +6,9 @@ FLAGS = -Wall -Wextra -Werror
 
 STD_COMP = -std=c++98
 
-SRC = main.cpp
+SRC = main.cpp SedForLosers.cpp
 
-HEADER = 
+HEADER = SedForLosers.hpp
 
 OBJ = $(SRC:.cpp=.o)
 

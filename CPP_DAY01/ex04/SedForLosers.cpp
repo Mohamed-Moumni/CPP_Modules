@@ -1,31 +1,28 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Harl.hpp                                           :+:      :+:    :+:   */
+/*   SedForLosers.cpp                                   :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mmoumni <mmoumni@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/10/25 13:24:21 by mmoumni           #+#    #+#             */
-/*   Updated: 2022/10/26 17:19:14 by mmoumni          ###   ########.fr       */
+/*   Created: 2022/10/26 11:09:54 by mmoumni           #+#    #+#             */
+/*   Updated: 2022/10/26 17:50:43 by mmoumni          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef HARL_HPP
-#define HARL_HPP
+#include "SedForLosers.hpp"
 
-#include<iostream>
-
-class Harl
+void    sed_for_losers(std::ofstream &fout, std::string &content, std::string &s1, std::string &s2)
 {
-    private:
-        void    debug( void );
-        void    info( void );
-        void    warning( void );
-        void    error( void );
-    public:
-        void    complain( std::string level );
-};
+    size_t      index;
 
-typedef void (Harl::*poinMemberFunc)(void); 
-
-#endif
+    index = content.find(s1);
+    while (index != std::string::npos)
+    {
+        content.erase(index, s1.size());
+        content.insert(index, s2);
+        index = content.find(s1);
+    }
+    std::cout << content;
+    fout << content;
+}
