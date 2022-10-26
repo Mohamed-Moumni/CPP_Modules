@@ -6,7 +6,7 @@
 /*   By: mmoumni <mmoumni@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/25 10:58:58 by mmoumni           #+#    #+#             */
-/*   Updated: 2022/10/26 15:23:41 by mmoumni          ###   ########.fr       */
+/*   Updated: 2022/10/26 18:57:04 by mmoumni          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -39,7 +39,10 @@ int main(int ac, char **av)
             if (fin.eof())
                 break ;
             content += "\n";
-            sed_for_losers(fout, content, s1, s2);
+            if (!s1.compare(""))
+                fout << content;
+            else
+                sed_for_losers(fout, content, s1, s2);
         }
     }
     else

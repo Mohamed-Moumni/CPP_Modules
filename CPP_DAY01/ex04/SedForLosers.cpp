@@ -6,7 +6,7 @@
 /*   By: mmoumni <mmoumni@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/26 11:09:54 by mmoumni           #+#    #+#             */
-/*   Updated: 2022/10/26 17:50:43 by mmoumni          ###   ########.fr       */
+/*   Updated: 2022/10/26 18:55:27 by mmoumni          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,6 +23,5 @@ void    sed_for_losers(std::ofstream &fout, std::string &content, std::string &s
         content.insert(index, s2);
         index = content.find(s1);
     }
-    std::cout << content;
     fout << content;
 }
