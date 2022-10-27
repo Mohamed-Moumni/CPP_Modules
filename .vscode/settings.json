@@ -4,6 +4,7 @@
         "string": "cpp",
         "bitset": "cpp",
         "locale": "cpp",
-        "memory": "cpp"
+        "memory": "cpp",
+        "iosfwd": "cpp"
     }
 }
