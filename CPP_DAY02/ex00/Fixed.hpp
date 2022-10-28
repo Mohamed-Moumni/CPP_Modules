@@ -12,17 +12,15 @@ class Fixed
 		Fixed();
 		Fixed( Fixed const & src );
 		~Fixed();
-
 		Fixed &		operator=( Fixed const & rhs );
-
+		int		getRawBits( void ) const;
+		void	setRawBits( int const raw );
 	private:
 		int fixed_point;
-		static const int fraction = 8;
-		int	getRawBits( void ) const;
-		int	Fixed::setRawBits( void ) const;
+		static const int fraction;
 
 };
 
-std::ostream &			operator<<( std::ostream & o, Fixed const & i );
+// std::ostream &			operator<<( std::ostream & o, Fixed const & i );
 
 #endif /* *********************************************************** FIXED_H */
