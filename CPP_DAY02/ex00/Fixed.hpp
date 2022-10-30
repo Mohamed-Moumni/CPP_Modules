@@ -8,7 +8,6 @@ class Fixed
 {
 
 	public:
-
 		Fixed();
 		Fixed( Fixed const & src );
 		~Fixed();
@@ -17,7 +16,7 @@ class Fixed
 		void	setRawBits( int const raw );
 	private:
 		int fixed_point;
-		static const int fraction;
+		static const int fraction = 8;
 
 };
 
