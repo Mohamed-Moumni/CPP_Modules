@@ -6,7 +6,7 @@
 /*   By: mmoumni <mmoumni@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/29 10:29:51 by mmoumni           #+#    #+#             */
-/*   Updated: 2022/11/01 11:04:15 by mmoumni          ###   ########.fr       */
+/*   Updated: 2022/11/01 21:22:23 by mmoumni          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,7 +31,7 @@ Fixed::Fixed( const Fixed & src )
 Fixed::Fixed( const int  number)
 {
 	std::cout << "Int constructor called" << std::endl;
-	this->fixed_point = roundf((number << fraction));
+	this->fixed_point = number << fraction;
 }
 
 Fixed::Fixed( const float number)
