@@ -6,7 +6,7 @@
 /*   By: mmoumni <mmoumni@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/30 21:10:37 by mmoumni           #+#    #+#             */
-/*   Updated: 2022/10/30 22:18:06 by mmoumni          ###   ########.fr       */
+/*   Updated: 2022/11/01 12:18:45 by mmoumni          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,26 +18,27 @@
 
 Fixed::Fixed()
 {
-	std::cout << "Default constructor called" << std::endl;
+	// std::cout << "Default constructor called" << std::endl;
 	this->fixed_point = 0;
 }
 
 Fixed::Fixed( const Fixed & src )
 {
-	std::cout << "Copy Constructor called" << std::endl;
+	// std::cout << "Copy Constructor called" << std::endl;
 	*this = src;
 }
 
 Fixed::Fixed( const int  number)
 {
-	std::cout << "Int constructor called" << std::endl;
-	this->fixed_point = roundf((number << fraction));
+	// std::cout << "Int constructor called" << std::endl;
+	this->fixed_point = (number) << Fixed::fraction;
 }
 
 Fixed::Fixed( const float number)
 {
-	std::cout << "Float constructor called" << std::endl;
+	// std::cout << "Float constructor called" << std::endl;
 	this->fixed_point = roundf((number * (float)(1<<Fixed::fraction)));
+	
 }
 
 /*
@@ -46,7 +47,7 @@ Fixed::Fixed( const float number)
 
 Fixed::~Fixed()
 {
-	std::cout << "Destructor called" << std::endl;
+	// std::cout << "Destructor called" << std::endl;
 }
 
 
@@ -56,7 +57,7 @@ Fixed::~Fixed()
 
 Fixed &				Fixed::operator=( Fixed const & rhs )
 {
-	std::cout << "Copy assignement operator called " << std::endl;
+	// std::cout << "Copy assignement operator called " << std::endl;
 	if ( this != &rhs )
 	{
 		this->fixed_point = rhs.fixed_point;
@@ -99,35 +100,35 @@ int Fixed::toInt( void ) const
 
 bool    Fixed::operator>(const Fixed & rhs)
 {
-    if (fixed_point > rhs.fixed_point)
-        return (true);
-    return (false);   
+	if (this->toFloat() > rhs.toFloat())
+		return (true);
+	return (false);
 }
 
 bool    Fixed::operator<(const Fixed & rhs)
 {
-    if (fixed_point < rhs.fixed_point)
+    if (this->toFloat() < rhs.toFloat())
         return (true);
     return (false);
 }
 
 bool Fixed::operator>=(const Fixed & rhs)
 {
-    if (fixed_point >= rhs.fixed_point)
+    if (this->toFloat() >= rhs.toFloat())
         return (true);
     return (false);
 }
 
 bool Fixed::operator<=(const Fixed & rhs)
 {
-    if (fixed_point <= rhs.fixed_point)
+    if (this->toFloat() <= rhs.toFloat())
         return (true);
     return (false);
 }
 
 bool Fixed::operator==(const Fixed & rhs)
 {
-    if (fixed_point == rhs.fixed_point)
+    if (this->toFloat() == rhs.toFloat())
         return (true);
     return (false);
 }
@@ -139,24 +140,80 @@ bool Fixed::operator!=(const Fixed & rhs)
     return (false);
 }
 
-Fixed & Fixed::operator+(const Fixed & rhs)
+Fixed	Fixed::operator+(const Fixed & rhs)
 {
-    this
+	float	result = this->toFloat() + rhs.toFloat();
+	return (Fixed(result));
 }
 
-Fixed & Fixed::operator-(const Fixed & rhs)
+Fixed	Fixed::operator-(const Fixed & rhs)
 {
-    
+	float	result = this->toFloat() - rhs.toFloat();
+	return (Fixed(result));
 }
 
-Fixed & Fixed::operator*(const Fixed & rhs)
+Fixed	Fixed::operator*(const Fixed & rhs)
 {
-    
+	float	result = this->toFloat() * rhs.toFloat();
+	return (Fixed(result));
 }
 
-Fixed & Fixed::operator/(const Fixed & rhs)
+Fixed	Fixed::operator/(const Fixed & rhs)
 {
-    
+	float	result = this->toFloat() / rhs.toFloat();
+	return (Fixed(result));	
+}
+
+Fixed & Fixed::min(Fixed & numb1, Fixed & numb2)
+{
+	if (numb1.toFloat() < numb2.toFloat())
+		return (numb1);
+	return (numb2);
+}
+
+Fixed & Fixed::min(const Fixed & numb1, const Fixed & numb2)
+{
+	if (numb1.toFloat() < numb2.toFloat())
+		return ((Fixed &)numb1);
+	return ((Fixed &)numb2);
+}
+
+Fixed & Fixed::max(const Fixed & numb1, const Fixed & numb2)
+{
+	if (numb1.toFloat() > numb2.toFloat())
+		return ((Fixed &)numb1);
+	return ((Fixed &)numb2);
+}
+
+Fixed & Fixed::max(Fixed & numb1, Fixed & numb2)
+{
+	if (numb1.toFloat() > numb2.toFloat())
+		return (numb1);
+	return (numb2);		
+}
+
+Fixed	Fixed::operator++(void)
+{
+	++fixed_point;
+	return *this;
+}
+
+Fixed	Fixed::operator++(int)
+{
+	Fixed old = Fixed(this->toFloat());
+	this->fixed_point++;
+	return (old);
+}
+
+Fixed	Fixed::operator--(void)
+{
+	--fixed_point;
+	return *this;
+}
+
+Fixed	Fixed::operator--(int)
+{
+	return (Fixed(fixed_point--));
 }
 /*
 ** --------------------------------- ACCESSOR ---------------------------------

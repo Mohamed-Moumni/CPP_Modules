@@ -6,7 +6,7 @@
 /*   By: mmoumni <mmoumni@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/29 10:29:51 by mmoumni           #+#    #+#             */
-/*   Updated: 2022/10/29 20:02:14 by mmoumni          ###   ########.fr       */
+/*   Updated: 2022/11/01 11:04:15 by mmoumni          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -54,7 +54,7 @@ Fixed::~Fixed()
 ** --------------------------------- OVERLOAD ---------------------------------
 */
 
-Fixed &				Fixed::operator=( Fixed const & rhs )
+Fixed	&	Fixed::operator=( Fixed const & rhs )
 {
 	std::cout << "Copy assignement operator called " << std::endl;
 	if ( this != &rhs )
@@ -64,7 +64,7 @@ Fixed &				Fixed::operator=( Fixed const & rhs )
 	return *this;
 }
 
-std::ostream &			operator<<( std::ostream & o, Fixed const & i )
+std::ostream &	operator<<( std::ostream & o, Fixed const & i )
 {
 	o << i.toFloat();
 	return o;
