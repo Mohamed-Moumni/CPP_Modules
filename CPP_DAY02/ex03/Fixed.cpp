@@ -6,7 +6,7 @@
 /*   By: mmoumni <mmoumni@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/29 10:29:51 by mmoumni           #+#    #+#             */
-/*   Updated: 2022/11/02 11:18:09 by mmoumni          ###   ########.fr       */
+/*   Updated: 2022/11/03 08:36:06 by mmoumni          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,25 +18,25 @@
 
 Fixed::Fixed()
 {
-	std::cout << "Default constructor called" << std::endl;
+	// std::cout << "Default constructor called" << std::endl;
 	this->fixed_point = 0;
 }
 
 Fixed::Fixed( const Fixed & src )
 {
-	std::cout << "Copy Constructor called" << std::endl;
+	// std::cout << "Copy Constructor called" << std::endl;
 	*this = src;
 }
 
 Fixed::Fixed( const int  number)
 {
-	std::cout << "Int constructor called" << std::endl;
+	// std::cout << "Int constructor called" << std::endl;
 	this->fixed_point = number << fraction;
 }
 
 Fixed::Fixed( const float number)
 {
-	std::cout << "Float constructor called" << std::endl;
+	// std::cout << "Float constructor called" << std::endl;
 	this->fixed_point = roundf((number * (float)(1<<Fixed::fraction)));
 }
 
@@ -46,7 +46,7 @@ Fixed::Fixed( const float number)
 
 Fixed::~Fixed()
 {
-	std::cout << "Destructor called" << std::endl;
+	// std::cout << "Destructor called" << std::endl;
 }
 
 
@@ -56,7 +56,7 @@ Fixed::~Fixed()
 
 Fixed	&	Fixed::operator=( Fixed const & rhs )
 {
-	std::cout << "Copy assignement operator called " << std::endl;
+	// std::cout << "Copy assignement operator called " << std::endl;
 	if ( this != &rhs )
 	{
 		this->fixed_point = rhs.fixed_point;
@@ -77,7 +77,7 @@ std::ostream &	operator<<( std::ostream & o, Fixed const & i )
 
 int	Fixed::getRawBits( void ) const
 {
-	std::cout << "getRawBits member function called" << std::endl;
+	// std::cout << "getRawBits member function called" << std::endl;
 	return this->fixed_point;
 }
 
