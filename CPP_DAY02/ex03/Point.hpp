@@ -6,7 +6,7 @@
 /*   By: mmoumni <mmoumni@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/02 12:22:26 by mmoumni           #+#    #+#             */
-/*   Updated: 2022/11/03 08:25:30 by mmoumni          ###   ########.fr       */
+/*   Updated: 2022/11/03 09:27:37 by mmoumni          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,7 +34,6 @@ class Point
 		Fixed const y;
 };
 
-std::ostream &			operator<<( std::ostream & o, Point const & i );
 bool	bsp(Point const a, Point const b, Point const c, Point const point);
 
 

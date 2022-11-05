@@ -6,7 +6,7 @@
 /*   By: mmoumni <mmoumni@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/02 12:26:42 by mmoumni           #+#    #+#             */
-/*   Updated: 2022/11/03 08:45:33 by mmoumni          ###   ########.fr       */
+/*   Updated: 2022/11/03 10:14:24 by mmoumni          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,7 +24,6 @@ static  float   claculate_traingle_area(Point const a, Point const b, Point cons
     result = (x + y + z) / 2;
     if (result < 0)
         result *= -1;
-    std::cout << result << std::endl;
     return (result);
 }
 

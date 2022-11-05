@@ -6,7 +6,7 @@
 /*   By: mmoumni <mmoumni@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/02 12:22:18 by mmoumni           #+#    #+#             */
-/*   Updated: 2022/11/02 15:44:54 by mmoumni          ###   ########.fr       */
+/*   Updated: 2022/11/03 17:00:51 by mmoumni          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -45,21 +45,15 @@ Point::~Point()
 ** --------------------------------- OVERLOAD ---------------------------------
 */
 
-// Point &				Point::operator=( Point const & rhs )
-// {
-// 	if ( this != &rhs )
-// 	{
-		
-// 	}
-// 	return *this;
-// }
-
-// std::ostream &			operator<<( std::ostream & o, Point const & i )
-// {
-// 	//o << "Value = " << i.getValue();
-// 	return o;
-// }
-
+Point &				Point::operator=( Point const & rhs )
+{
+	if ( this != &rhs )
+	{
+		const_cast<Fixed &> (this->x) = rhs.x;
+		const_cast<Fixed &> (this->y) = rhs.y;
+	}
+	return *this;
+}
 
 /*
 ** --------------------------------- METHODS ----------------------------------
