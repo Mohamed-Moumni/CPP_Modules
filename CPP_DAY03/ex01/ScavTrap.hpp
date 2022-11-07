@@ -1,27 +1,32 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.cpp                                           :+:      :+:    :+:   */
+/*   ScavTrap.hpp                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mmoumni <mmoumni@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/11/05 21:18:03 by mmoumni           #+#    #+#             */
-/*   Updated: 2022/11/07 09:15:13 by mmoumni          ###   ########.fr       */
+/*   Created: 2022/11/07 09:26:12 by mmoumni           #+#    #+#             */
+/*   Updated: 2022/11/07 15:49:21 by mmoumni          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
+#ifndef SCAVTRAP_HPP
+#define SCAVTRAP_HPP
+
 #include "ClapTrap.hpp"
 
-int main(void)
+class ScavTrap: public ClapTrap
 {
-    ClapTrap clapTrap1("moha");
-    ClapTrap clapTrap2("abdo");
+	public:
+		ScavTrap();
+		ScavTrap( ScavTrap const & src);
+		ScavTrap( std::string _name);
+		~ScavTrap();
+		void	guardGate();
+		ScavTrap & operator =(ScavTrap const & rhs);
+		
+};
 
-    clapTrap1.attack("abdo");
-    clapTrap2.takeDamage(clapTrap1.get_AttackDamage());
-    clapTrap2.takeDamage(10);
-    clapTrap2.takeDamage(10);
-    std::cout << clapTrap1 << std::endl;
-    std::cout << clapTrap2 << std::endl;
-    return (0);
-}
+std::ostream &			operator<<( std::ostream & o, ScavTrap const & i );
+
+#endif

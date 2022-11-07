@@ -6,22 +6,24 @@
 /*   By: mmoumni <mmoumni@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/05 21:18:03 by mmoumni           #+#    #+#             */
-/*   Updated: 2022/11/07 09:15:13 by mmoumni          ###   ########.fr       */
+/*   Updated: 2022/11/07 16:43:37 by mmoumni          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ClapTrap.hpp"
+#include "ScavTrap.hpp"
+#include "FragTrap.hpp"
 
 int main(void)
 {
-    ClapTrap clapTrap1("moha");
-    ClapTrap clapTrap2("abdo");
+    FragTrap a("moha");
+    FragTrap b("abdo");
 
-    clapTrap1.attack("abdo");
-    clapTrap2.takeDamage(clapTrap1.get_AttackDamage());
-    clapTrap2.takeDamage(10);
-    clapTrap2.takeDamage(10);
-    std::cout << clapTrap1 << std::endl;
-    std::cout << clapTrap2 << std::endl;
+    a.highFivesGuys();
+    a.attack("abdo");
+    b.takeDamage(a.get_AttackDamage());
+    ClapTrap c("mehdi");
+    c.attack("moha");
+    a.takeDamage(c.get_AttackDamage()); 
     return (0);
 }

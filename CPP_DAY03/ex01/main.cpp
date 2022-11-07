@@ -6,22 +6,33 @@
 /*   By: mmoumni <mmoumni@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/05 21:18:03 by mmoumni           #+#    #+#             */
-/*   Updated: 2022/11/07 09:15:13 by mmoumni          ###   ########.fr       */
+/*   Updated: 2022/11/07 15:50:46 by mmoumni          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ClapTrap.hpp"
+#include "ScavTrap.hpp"
 
 int main(void)
 {
-    ClapTrap clapTrap1("moha");
-    ClapTrap clapTrap2("abdo");
+    ScavTrap scav1("moha");
+    ScavTrap scav2("abdo");
 
-    clapTrap1.attack("abdo");
-    clapTrap2.takeDamage(clapTrap1.get_AttackDamage());
-    clapTrap2.takeDamage(10);
-    clapTrap2.takeDamage(10);
-    std::cout << clapTrap1 << std::endl;
-    std::cout << clapTrap2 << std::endl;
+    scav1.guardGate();
+    scav1.attack("abdo");
+    scav1.attack("abdo");
+    scav1.attack("abdo");
+    scav1.attack("abdo");
+    scav1.attack("abdo");
+    scav1.attack("abdo");
+    scav1.attack("abdo");
+    scav2.takeDamage(scav1.get_AttackDamage());
+    scav2.takeDamage(scav1.get_AttackDamage());
+    scav2.takeDamage(scav1.get_AttackDamage());
+    scav2.takeDamage(scav1.get_AttackDamage());
+    scav2.takeDamage(scav1.get_AttackDamage());
+    scav2.takeDamage(scav1.get_AttackDamage());
+    scav2.takeDamage(scav1.get_AttackDamage());
+    std::cout << scav1  << scav2;
     return (0);
 }
