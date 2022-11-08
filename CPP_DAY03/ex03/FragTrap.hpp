@@ -6,7 +6,7 @@
 /*   By: mmoumni <mmoumni@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/07 13:20:46 by mmoumni           #+#    #+#             */
-/*   Updated: 2022/11/07 16:13:59 by mmoumni          ###   ########.fr       */
+/*   Updated: 2022/11/08 13:12:42 by mmoumni          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,7 +17,7 @@
 # include <string>
 #include "ClapTrap.hpp"
 
-class FragTrap:public ClapTrap
+class FragTrap: virtual public ClapTrap
 {
 
 	public:

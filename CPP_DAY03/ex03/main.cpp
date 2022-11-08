@@ -1,32 +1,23 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ScavTrap.hpp                                       :+:      :+:    :+:   */
+/*   main.cpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mmoumni <mmoumni@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/11/07 09:26:12 by mmoumni           #+#    #+#             */
-/*   Updated: 2022/11/08 13:12:38 by mmoumni          ###   ########.fr       */
+/*   Created: 2022/11/08 15:15:18 by mmoumni           #+#    #+#             */
+/*   Updated: 2022/11/08 15:20:10 by mmoumni          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef SCAVTRAP_HPP
-#define SCAVTRAP_HPP
+#include"DiamondTrap.hpp"
+#include"ClapTrap.hpp"
+#include"FragTrap.hpp"
+#include"ScavTrap.hpp"
 
-#include "ClapTrap.hpp"
-
-class ScavTrap: virtual public ClapTrap
+int main(void)
 {
-	public:
-		ScavTrap();
-		ScavTrap( ScavTrap const & src);
-		ScavTrap( std::string _name);
-		~ScavTrap();
-		void	guardGate();
-		ScavTrap & operator =(ScavTrap const & rhs);
-		
-};
-
-std::ostream &			operator<<( std::ostream & o, ScavTrap const & i );
-
-#endif
+    DiamondTrap d1("abdo");
+    
+    d1.attack("moha");
+}

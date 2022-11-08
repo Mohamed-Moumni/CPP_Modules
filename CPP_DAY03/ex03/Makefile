@@ -1,4 +1,4 @@
-NAME = repetitive_work
+NAME = diamond
 
 CPP = c++
 
@@ -6,9 +6,9 @@ FLAGS = -Wall -Wextra -Werror
 
 STD_COMP = -std=c++98
 
-SRC = main.cpp ClapTrap.cpp ScavTrap.cpp FragTrap.cpp
+SRC = main.cpp ClapTrap.cpp ScavTrap.cpp FragTrap.cpp DiamondTrap.cpp
 
-HEADER = ClapTrap.hpp ScavTrap.hpp FragTrap.hpp
+HEADER = ClapTrap.hpp ScavTrap.hpp FragTrap.hpp DiamondTrap.hpp
 
 OBJ = $(SRC:.cpp=.o)
 

@@ -6,7 +6,7 @@
 /*   By: mmoumni <mmoumni@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/07 16:49:21 by mmoumni           #+#    #+#             */
-/*   Updated: 2022/11/07 20:22:29 by mmoumni          ###   ########.fr       */
+/*   Updated: 2022/11/08 15:18:08 by mmoumni          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,16 +18,21 @@
 
 DiamondTrap::DiamondTrap()
 {
+	
 }
 
 DiamondTrap::DiamondTrap( const DiamondTrap & src )
 {
+	*this = src;
 }
 
 DiamondTrap::DiamondTrap( std::string _name)
 {
 	this->Name = _name;
-	
+	ClapTrap::Name = _name + "_clap_name";
+	this->HitPoint = FragTrap::HitPoint;
+	this->EnergyPoint = ScavTrap::EnergyPoint;
+	this->AttackDamage = FragTrap::AttackDamage;
 }
 
 /*
@@ -36,6 +41,7 @@ DiamondTrap::DiamondTrap( std::string _name)
 
 DiamondTrap::~DiamondTrap()
 {
+	
 }
 
 
@@ -45,16 +51,19 @@ DiamondTrap::~DiamondTrap()
 
 DiamondTrap &				DiamondTrap::operator=( DiamondTrap const & rhs )
 {
-	//if ( this != &rhs )
-	//{
-		//this->_value = rhs.getValue();
-	//}
+	if ( this != &rhs )
+	{
+		this->Name = rhs.Name;
+		this->EnergyPoint = rhs.EnergyPoint;
+		this->HitPoint = rhs.HitPoint;
+		this->AttackDamage = rhs.AttackDamage;
+	}
 	return *this;
 }
 
 std::ostream &			operator<<( std::ostream & o, DiamondTrap const & i )
 {
-	//o << "Value = " << i.getValue();
+	o << "Value = " << i.get_AttackDamage();
 	return o;
 }
 
@@ -63,7 +72,10 @@ std::ostream &			operator<<( std::ostream & o, DiamondTrap const & i )
 ** --------------------------------- METHODS ----------------------------------
 */
 
-
+void	DiamondTrap::WhoAmI()
+{
+	std::cout << "DiamondTrap's Name: " << this->Name << " ClapTrap's Name: " << ClapTrap::Name << std::endl;
+}
 /*
 ** --------------------------------- ACCESSOR ---------------------------------
 */

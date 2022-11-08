@@ -6,7 +6,7 @@
 /*   By: mmoumni <mmoumni@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/07 16:49:25 by mmoumni           #+#    #+#             */
-/*   Updated: 2022/11/07 22:24:11 by mmoumni          ###   ########.fr       */
+/*   Updated: 2022/11/08 15:04:07 by mmoumni          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,7 +19,7 @@
 # include "FragTrap.hpp"
 # include "ScavTrap.hpp"
 
-class DiamondTrap:public FragTrap, public ScavTrap
+class DiamondTrap: public FragTrap, public ScavTrap
 {
 
 	public:
@@ -30,6 +30,7 @@ class DiamondTrap:public FragTrap, public ScavTrap
 		~DiamondTrap();
 
 		DiamondTrap &		operator=( DiamondTrap const & rhs );
+		void	WhoAmI();
 
 	private:
 		std::string Name;
