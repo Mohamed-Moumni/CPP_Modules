@@ -6,7 +6,7 @@
 /*   By: mmoumni <mmoumni@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/07 13:20:52 by mmoumni           #+#    #+#             */
-/*   Updated: 2022/11/07 16:45:51 by mmoumni          ###   ########.fr       */
+/*   Updated: 2022/11/09 01:03:50 by mmoumni          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,6 +20,9 @@
 FragTrap::FragTrap()
 {
 	std::cout << "FragTrap " << "Default Constructor Called "<< std::endl;
+	this->HitPoint = 100;
+	this->EnergyPoint = 100;
+	this->AttackDamage = 30;
 } 
 
 FragTrap::FragTrap(std::string _name)

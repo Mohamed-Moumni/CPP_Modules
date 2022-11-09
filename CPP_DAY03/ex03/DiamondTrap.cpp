@@ -6,7 +6,7 @@
 /*   By: mmoumni <mmoumni@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/07 16:49:21 by mmoumni           #+#    #+#             */
-/*   Updated: 2022/11/08 15:18:08 by mmoumni          ###   ########.fr       */
+/*   Updated: 2022/11/09 09:13:32 by mmoumni          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,18 +18,21 @@
 
 DiamondTrap::DiamondTrap()
 {
+	std::cout << "DiamondTrap Default Constructor is called." << std::endl;
 	
 }
 
 DiamondTrap::DiamondTrap( const DiamondTrap & src )
 {
+	std::cout << "DiamondTrap Copy Constructor is Called" << std::endl;
 	*this = src;
 }
 
 DiamondTrap::DiamondTrap( std::string _name)
 {
+	std::cout << "DiamondTrap Arguments constructor is Called" << std::endl;
 	this->Name = _name;
-	ClapTrap::Name = _name + "_clap_name";
+	ClapTrap::Name = _name + "_" + ClapTrap::Name;
 	this->HitPoint = FragTrap::HitPoint;
 	this->EnergyPoint = ScavTrap::EnergyPoint;
 	this->AttackDamage = FragTrap::AttackDamage;
@@ -41,7 +44,7 @@ DiamondTrap::DiamondTrap( std::string _name)
 
 DiamondTrap::~DiamondTrap()
 {
-	
+	std::cout << "DiamondTrap Destructor is called." << std::endl;	
 }
 
 
@@ -63,7 +66,7 @@ DiamondTrap &				DiamondTrap::operator=( DiamondTrap const & rhs )
 
 std::ostream &			operator<<( std::ostream & o, DiamondTrap const & i )
 {
-	o << "Value = " << i.get_AttackDamage();
+	o << i.get_Name() << " " << i.get_HitPoint() << " " << i.get_EnergyPoint() << " " << i.get_AttackDamage() << std::endl;
 	return o;
 }
 

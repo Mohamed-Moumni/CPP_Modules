@@ -6,7 +6,7 @@
 /*   By: mmoumni <mmoumni@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/08 15:15:18 by mmoumni           #+#    #+#             */
-/*   Updated: 2022/11/08 15:20:10 by mmoumni          ###   ########.fr       */
+/*   Updated: 2022/11/09 18:23:18 by mmoumni          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,7 +17,7 @@
 
 int main(void)
 {
-    DiamondTrap d1("abdo");
-    
-    d1.attack("moha");
+    ClapTrap *ptr = new DiamondTrap("moha");
+    ptr->attack("cristiano");
+    delete ptr;
 }

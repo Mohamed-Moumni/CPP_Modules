@@ -6,15 +6,15 @@
 /*   By: mmoumni <mmoumni@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/07 09:26:08 by mmoumni           #+#    #+#             */
-/*   Updated: 2022/11/07 16:45:32 by mmoumni          ###   ########.fr       */
+/*   Updated: 2022/11/09 12:31:10 by mmoumni          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include"ScavTrap.hpp"
 
-ScavTrap::ScavTrap(std::string _name)
+ScavTrap::ScavTrap(const std::string & _name)
 {
-    std::cout << "ScavTrap " << " Argument Constructor is Called " << std::endl;
+    std::cout << "ScavTrap" << " Argument Constructor is Called " << std::endl;
     this->Name = _name;
     this->HitPoint = 100;
     this->EnergyPoint = 50;
@@ -23,7 +23,10 @@ ScavTrap::ScavTrap(std::string _name)
 
 ScavTrap::ScavTrap()
 {
-    std::cout << "ScavTrap " << " Default Constructor is Called " << std::endl;   
+    std::cout << "ScavTrap " << " Default Constructor is Called " << std::endl;
+    this->HitPoint = 100;
+    this->EnergyPoint = 50;
+    this->AttackDamage = 20;
 }
 
 ScavTrap::ScavTrap(ScavTrap const & src)
@@ -52,6 +55,17 @@ ScavTrap & ScavTrap::operator =(ScavTrap const & rhs)
         this->AttackDamage = rhs.AttackDamage;
     }
     return *this;
+}
+
+void ScavTrap::attack(const std::string & target)
+{
+	if (this->EnergyPoint > 0)
+	{
+		std::cout << "ScavTrap " << this->Name << " attacks "<< target << " , causing "<< this->AttackDamage << " points of damage!" << std::endl;
+		this->EnergyPoint -= 1;
+	}
+	else
+		std::cout << this->Name << " can't do anything " << std::endl;
 }
 
 std::ostream &			operator<<( std::ostream & o, ScavTrap const & i )

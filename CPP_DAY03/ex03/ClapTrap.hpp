@@ -6,7 +6,7 @@
 /*   By: mmoumni <mmoumni@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/05 21:18:11 by mmoumni           #+#    #+#             */
-/*   Updated: 2022/11/07 15:59:56 by mmoumni          ###   ########.fr       */
+/*   Updated: 2022/11/09 17:21:41 by mmoumni          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,10 +24,10 @@ class ClapTrap
 		ClapTrap();
 		ClapTrap( ClapTrap const & src );
 		ClapTrap(std::string _name);
-		~ClapTrap();
+		virtual ~ClapTrap();
 
 		ClapTrap &		operator=( ClapTrap const & rhs );
-		void		attack(const std::string & target);
+		virtual void		attack(const std::string & target);
 		void		takeDamage(unsigned int amount);
 		void		beRepaired(unsigned int amount);
 		std::string	get_Name(void) const;

@@ -6,7 +6,7 @@
 /*   By: mmoumni <mmoumni@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/07 16:49:25 by mmoumni           #+#    #+#             */
-/*   Updated: 2022/11/08 15:04:07 by mmoumni          ###   ########.fr       */
+/*   Updated: 2022/11/09 09:44:28 by mmoumni          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,7 +31,6 @@ class DiamondTrap: public FragTrap, public ScavTrap
 
 		DiamondTrap &		operator=( DiamondTrap const & rhs );
 		void	WhoAmI();
-
 	private:
 		std::string Name;
 
