@@ -6,7 +6,7 @@
 /*   By: mmoumni <mmoumni@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/05 21:18:11 by mmoumni           #+#    #+#             */
-/*   Updated: 2022/11/05 22:03:55 by mmoumni          ###   ########.fr       */
+/*   Updated: 2022/11/09 08:45:29 by mmoumni          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,7 +20,6 @@ class ClapTrap
 {
 
 	public:
-
 		ClapTrap();
 		ClapTrap( ClapTrap const & src );
 		ClapTrap(std::string _name);

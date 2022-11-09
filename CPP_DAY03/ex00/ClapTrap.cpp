@@ -6,7 +6,7 @@
 /*   By: mmoumni <mmoumni@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/05 21:18:17 by mmoumni           #+#    #+#             */
-/*   Updated: 2022/11/07 15:45:17 by mmoumni          ###   ########.fr       */
+/*   Updated: 2022/11/09 12:25:18 by mmoumni          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,7 +16,7 @@
 ** ------------------------------- CONSTRUCTOR --------------------------------
 */
 
-ClapTrap::ClapTrap()
+ClapTrap::ClapTrap():HitPoint(10), EnergyPoint(10), AttackDamage(0)
 {
 	std::cout << "ClapTrap " << "Default Constructor Called" << std::endl;
 }
@@ -114,7 +114,7 @@ std::string	ClapTrap::get_Name(void) const
 
 int			ClapTrap::get_HitPoint(void) const
 {
-	return (this->HitPoint); 
+	return (this->HitPoint);
 }
 
 int			ClapTrap::get_EnergyPoint(void) const
