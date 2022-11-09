@@ -1,26 +1,32 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.cpp                                           :+:      :+:    :+:   */
+/*   ScavTrap.hpp                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mmoumni <mmoumni@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/11/05 21:18:03 by mmoumni           #+#    #+#             */
-/*   Updated: 2022/11/09 18:17:14 by mmoumni          ###   ########.fr       */
+/*   Created: 2022/11/07 09:26:12 by mmoumni           #+#    #+#             */
+/*   Updated: 2022/11/09 17:21:04 by mmoumni          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "ClapTrap.hpp"
-#include "ScavTrap.hpp"
-#include "FragTrap.hpp"
+#ifndef SCAVTRAP_HPP
+#define SCAVTRAP_HPP
 
-int main(void)
+#include "ClapTrap.hpp"
+
+class ScavTrap: public ClapTrap
 {
-    FragTrap *frag = new FragTrap("moha");
-    ClapTrap *claptrap = frag;
-    claptrap->attack("abdo");
-    ScavTrap scavtrap1;
-    scavtrap1.attack("hmida");
-    delete frag;
-    return (0);
-}
+	public:
+		ScavTrap();
+		ScavTrap( ScavTrap const & src);
+		ScavTrap( const std::string & _name);
+		~ScavTrap();
+		void	attack(const std::string & target);
+		void	guardGate();
+		ScavTrap & operator =(ScavTrap const & rhs);
+};
+
+std::ostream &			operator<<( std::ostream & o, ScavTrap const & i );
+
+#endif
