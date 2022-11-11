@@ -6,13 +6,15 @@
 /*   By: mmoumni <mmoumni@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/09 21:12:32 by mmoumni           #+#    #+#             */
-/*   Updated: 2022/11/10 14:16:27 by mmoumni          ###   ########.fr       */
+/*   Updated: 2022/11/11 23:16:58 by mmoumni          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Animal.hpp"
 #include "Cat.hpp"
 #include "Dog.hpp"
+#include "WrongAnimal.hpp"
+#include "WrongCat.hpp"
 
 int main(void)
 {
@@ -28,5 +30,8 @@ int main(void)
     delete meta;
     delete j;
     delete i;
+    WrongAnimal *animal = new WrongCat;
+    animal->makeSound();
+    delete animal;
     return (0);
 }

@@ -6,9 +6,9 @@ FLAGS = -Wall -Wextra -Werror
 
 STD_COMP = -std=c++98
 
-SRC = main.cpp Dog.cpp Cat.cpp Animal.cpp
+SRC = main.cpp Dog.cpp Cat.cpp Animal.cpp WrongAnimal.cpp WrongCat.cpp
 
-HEADER = Dog.hpp Cat.hpp Animal.hpp
+HEADER = Dog.hpp Cat.hpp Animal.hpp WrongAnimal.hpp WrongCat.hpp
 
 OBJ = $(SRC:.cpp=.o)
 
