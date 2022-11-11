@@ -6,7 +6,7 @@
 /*   By: mmoumni <mmoumni@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/05 21:18:11 by mmoumni           #+#    #+#             */
-/*   Updated: 2022/11/09 17:21:41 by mmoumni          ###   ########.fr       */
+/*   Updated: 2022/11/11 11:16:12 by mmoumni          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,11 +34,6 @@ class ClapTrap
 		int			get_HitPoint(void) const;
 		int			get_EnergyPoint(void) const;
 		int			get_AttackDamage(void) const;
-		void		SetName(std::string _name);
-		void		SetHitPoint(int amount);
-		void		SetEnergyPoint(int amount);
-		void		SetAttackDamage(int amount);
-
 	protected:
 		std::string Name;
 		int	HitPoint;
@@ -46,7 +41,5 @@ class ClapTrap
 		int	AttackDamage;
 
 };
-
-std::ostream &			operator<<( std::ostream & o, ClapTrap const & i );
 
 #endif /* ******************************************************** CLAPTRAP_H */

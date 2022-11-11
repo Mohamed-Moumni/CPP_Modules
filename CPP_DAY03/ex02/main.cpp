@@ -6,7 +6,7 @@
 /*   By: mmoumni <mmoumni@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/05 21:18:03 by mmoumni           #+#    #+#             */
-/*   Updated: 2022/11/09 18:17:14 by mmoumni          ###   ########.fr       */
+/*   Updated: 2022/11/11 09:03:35 by mmoumni          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,11 +16,11 @@
 
 int main(void)
 {
-    FragTrap *frag = new FragTrap("moha");
-    ClapTrap *claptrap = frag;
-    claptrap->attack("abdo");
-    ScavTrap scavtrap1;
-    scavtrap1.attack("hmida");
+    ClapTrap *frag = new ScavTrap;
+    ClapTrap *frag1 = new FragTrap;
+    frag->attack("cristano");
+    frag1->attack("himda");
     delete frag;
+    delete frag1;
     return (0);
 }

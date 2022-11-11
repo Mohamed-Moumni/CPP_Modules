@@ -6,7 +6,7 @@
 /*   By: mmoumni <mmoumni@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/07 09:26:08 by mmoumni           #+#    #+#             */
-/*   Updated: 2022/11/09 12:31:10 by mmoumni          ###   ########.fr       */
+/*   Updated: 2022/11/11 08:59:49 by mmoumni          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -66,10 +66,4 @@ void ScavTrap::attack(const std::string & target)
 	}
 	else
 		std::cout << this->Name << " can't do anything " << std::endl;
-}
-
-std::ostream &			operator<<( std::ostream & o, ScavTrap const & i )
-{
-	o << "ClapTrap " << i.get_Name() << " " << i.get_HitPoint() << " " << i.get_EnergyPoint() << " " << i.get_AttackDamage() << std::endl;
-	return o;
 }

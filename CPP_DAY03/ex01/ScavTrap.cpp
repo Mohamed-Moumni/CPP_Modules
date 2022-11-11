@@ -6,15 +6,15 @@
 /*   By: mmoumni <mmoumni@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/07 09:26:08 by mmoumni           #+#    #+#             */
-/*   Updated: 2022/11/07 16:01:00 by mmoumni          ###   ########.fr       */
+/*   Updated: 2022/11/11 08:51:21 by mmoumni          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include"ScavTrap.hpp"
 
-ScavTrap::ScavTrap(std::string _name)
+ScavTrap::ScavTrap(const std::string & _name)
 {
-    std::cout << "ScavTrap " << " Argument Constructor is Called " << std::endl;
+    std::cout << "ScavTrap" << " Argument Constructor is Called " << std::endl;
     this->Name = _name;
     this->HitPoint = 100;
     this->EnergyPoint = 50;
@@ -23,7 +23,10 @@ ScavTrap::ScavTrap(std::string _name)
 
 ScavTrap::ScavTrap()
 {
-    std::cout << "ScavTrap " << " Default Constructor is Called " << std::endl;   
+    std::cout << "ScavTrap " << " Default Constructor is Called " << std::endl;
+    this->HitPoint = 100;
+    this->EnergyPoint = 50;
+    this->AttackDamage = 20;
 }
 
 ScavTrap::ScavTrap(ScavTrap const & src)
@@ -34,7 +37,7 @@ ScavTrap::ScavTrap(ScavTrap const & src)
 
 ScavTrap::~ScavTrap()
 {
-    std::cout << "ScavTrap" << " Destructor is Called " << std::endl;
+    std::cout << "ScavTrap " << this->Name << " Destructor is Called " << std::endl;
 }
 
 void    ScavTrap::guardGate(void)
@@ -54,8 +57,14 @@ ScavTrap & ScavTrap::operator =(ScavTrap const & rhs)
     return *this;
 }
 
-std::ostream &			operator<<( std::ostream & o, ScavTrap const & i )
+void ScavTrap::attack(const std::string & target)
 {
-	o << "ClapTrap " << i.get_Name() << " " << i.get_HitPoint() << " " << i.get_EnergyPoint() << " " << i.get_AttackDamage() << std::endl;
-	return o;
+	if (this->EnergyPoint > 0)
+	{
+		std::cout << "ScavTrap " << this->Name << " attacks "<< target << " , causing "<< this->AttackDamage << " points of damage!" << std::endl;
+		this->EnergyPoint -= 1;
+	}
+	else
+		std::cout << this->Name << " can't do anything " << std::endl;
 }
+

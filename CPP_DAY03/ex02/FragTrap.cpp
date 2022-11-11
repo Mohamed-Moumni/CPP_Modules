@@ -6,7 +6,7 @@
 /*   By: mmoumni <mmoumni@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/07 13:20:52 by mmoumni           #+#    #+#             */
-/*   Updated: 2022/11/09 01:03:50 by mmoumni          ###   ########.fr       */
+/*   Updated: 2022/11/11 09:00:15 by mmoumni          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -66,13 +66,6 @@ FragTrap &				FragTrap::operator=( FragTrap const & rhs )
 	}
 	return *this;
 }
-
-std::ostream &			operator<<( std::ostream & o, FragTrap const & i )
-{
-	o << "FragTrap " << i.get_Name() << " " << i.get_HitPoint() << " " << i.get_EnergyPoint() << " " << i.get_AttackDamage() << std::endl;
-	return o;
-}
-
 
 /*
 ** --------------------------------- METHODS ----------------------------------

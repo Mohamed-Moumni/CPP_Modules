@@ -6,7 +6,7 @@
 /*   By: mmoumni <mmoumni@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/08 15:15:18 by mmoumni           #+#    #+#             */
-/*   Updated: 2022/11/09 18:23:18 by mmoumni          ###   ########.fr       */
+/*   Updated: 2022/11/11 12:11:31 by mmoumni          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,7 +17,13 @@
 
 int main(void)
 {
-    ClapTrap *ptr = new DiamondTrap("moha");
-    ptr->attack("cristiano");
-    delete ptr;
+   DiamondTrap diam("Cristiano");
+   
+   diam.attack("himda");
+   std::cout << diam.get_Name() << std::endl;
+   std::cout << diam.get_HitPoint() << std::endl;
+   std::cout << diam.get_EnergyPoint() << std::endl;
+   std::cout << diam.get_AttackDamage() << std::endl;
+   diam.WhoAmI();
+   return 0;
 }

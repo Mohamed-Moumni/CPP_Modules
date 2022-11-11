@@ -6,7 +6,7 @@
 /*   By: mmoumni <mmoumni@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/07 16:49:21 by mmoumni           #+#    #+#             */
-/*   Updated: 2022/11/09 09:13:32 by mmoumni          ###   ########.fr       */
+/*   Updated: 2022/11/11 12:08:31 by mmoumni          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,7 +19,6 @@
 DiamondTrap::DiamondTrap()
 {
 	std::cout << "DiamondTrap Default Constructor is called." << std::endl;
-	
 }
 
 DiamondTrap::DiamondTrap( const DiamondTrap & src )
@@ -32,12 +31,11 @@ DiamondTrap::DiamondTrap( std::string _name)
 {
 	std::cout << "DiamondTrap Arguments constructor is Called" << std::endl;
 	this->Name = _name;
-	ClapTrap::Name = _name + "_" + ClapTrap::Name;
-	this->HitPoint = FragTrap::HitPoint;
-	this->EnergyPoint = ScavTrap::EnergyPoint;
-	this->AttackDamage = FragTrap::AttackDamage;
+	ClapTrap::Name = _name + "_clap_name";
+	this->HitPoint = 100;
+	this->EnergyPoint = 50;
+	this->AttackDamage = 30;
 }
-
 /*
 ** -------------------------------- DESTRUCTOR --------------------------------
 */
@@ -64,13 +62,6 @@ DiamondTrap &				DiamondTrap::operator=( DiamondTrap const & rhs )
 	return *this;
 }
 
-std::ostream &			operator<<( std::ostream & o, DiamondTrap const & i )
-{
-	o << i.get_Name() << " " << i.get_HitPoint() << " " << i.get_EnergyPoint() << " " << i.get_AttackDamage() << std::endl;
-	return o;
-}
-
-
 /*
 ** --------------------------------- METHODS ----------------------------------
 */
@@ -82,6 +73,24 @@ void	DiamondTrap::WhoAmI()
 /*
 ** --------------------------------- ACCESSOR ---------------------------------
 */
+std::string	DiamondTrap::get_Name(void) const
+{
+	return (this->Name);
+}
 
+int			DiamondTrap::get_HitPoint(void) const
+{
+	return (this->HitPoint); 
+}
+
+int			DiamondTrap::get_EnergyPoint(void) const
+{
+	return (this->EnergyPoint);
+}
+
+int			DiamondTrap::get_AttackDamage(void) const
+{
+	return (this->AttackDamage);	
+}
 
 /* ************************************************************************** */

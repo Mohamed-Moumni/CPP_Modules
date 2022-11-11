@@ -6,7 +6,7 @@
 /*   By: mmoumni <mmoumni@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/05 21:18:17 by mmoumni           #+#    #+#             */
-/*   Updated: 2022/11/09 00:45:54 by mmoumni          ###   ########.fr       */
+/*   Updated: 2022/11/11 08:59:30 by mmoumni          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -59,13 +59,6 @@ ClapTrap &				ClapTrap::operator=( ClapTrap const & rhs )
 	}
 	return *this;
 }
-
-std::ostream &			operator<<( std::ostream & o, ClapTrap const & i )
-{
-	o << i.get_Name() << " " << i.get_HitPoint() << " " << i.get_EnergyPoint() << " " << i.get_AttackDamage() << std::endl;
-	return o;
-}
-
 
 /*
 ** --------------------------------- METHODS ----------------------------------

@@ -6,7 +6,7 @@
 /*   By: mmoumni <mmoumni@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/05 21:18:11 by mmoumni           #+#    #+#             */
-/*   Updated: 2022/11/09 08:45:29 by mmoumni          ###   ########.fr       */
+/*   Updated: 2022/11/11 08:48:54 by mmoumni          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -41,7 +41,5 @@ class ClapTrap
 		int	AttackDamage;
 
 };
-
-std::ostream &			operator<<( std::ostream & o, ClapTrap const & i );
 
 #endif /* ******************************************************** CLAPTRAP_H */

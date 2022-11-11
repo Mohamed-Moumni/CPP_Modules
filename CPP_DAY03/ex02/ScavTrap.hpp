@@ -6,7 +6,7 @@
 /*   By: mmoumni <mmoumni@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/07 09:26:12 by mmoumni           #+#    #+#             */
-/*   Updated: 2022/11/09 17:21:04 by mmoumni          ###   ########.fr       */
+/*   Updated: 2022/11/11 08:59:59 by mmoumni          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,7 +26,5 @@ class ScavTrap: public ClapTrap
 		void	guardGate();
 		ScavTrap & operator =(ScavTrap const & rhs);
 };
-
-std::ostream &			operator<<( std::ostream & o, ScavTrap const & i );
 
 #endif

@@ -6,7 +6,7 @@
 /*   By: mmoumni <mmoumni@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/07 13:20:46 by mmoumni           #+#    #+#             */
-/*   Updated: 2022/11/09 08:52:20 by mmoumni          ###   ########.fr       */
+/*   Updated: 2022/11/11 09:01:24 by mmoumni          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,7 +15,7 @@
 
 # include <iostream>
 # include <string>
-#include "ClapTrap.hpp"
+# include "ClapTrap.hpp"
 
 class FragTrap: public ClapTrap
 {
@@ -28,7 +28,5 @@ class FragTrap: public ClapTrap
 		FragTrap &		operator=( FragTrap const & rhs );
 		void			highFivesGuys(void);
 };
-
-std::ostream &			operator<<( std::ostream & o, FragTrap const & i );
 
 #endif /* ******************************************************** FRAGTRAP_H */
