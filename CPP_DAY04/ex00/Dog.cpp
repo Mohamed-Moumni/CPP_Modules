@@ -6,7 +6,7 @@
 /*   By: mmoumni <mmoumni@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/09 23:55:48 by mmoumni           #+#    #+#             */
-/*   Updated: 2022/11/10 00:04:26 by mmoumni          ###   ########.fr       */
+/*   Updated: 2022/11/11 18:06:23 by mmoumni          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -52,13 +52,6 @@ Dog &				Dog::operator=( Dog const & rhs )
 	}
 	return *this;
 }
-
-std::ostream &			operator<<( std::ostream & o, Dog const & i )
-{
-	o << "Dog's type: " << i.get_type() << std::endl;
-	return o;
-}
-
 
 /*
 ** --------------------------------- METHODS ----------------------------------

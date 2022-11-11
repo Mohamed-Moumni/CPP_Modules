@@ -6,7 +6,7 @@
 /*   By: mmoumni <mmoumni@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/09 23:44:33 by mmoumni           #+#    #+#             */
-/*   Updated: 2022/11/10 00:04:55 by mmoumni          ###   ########.fr       */
+/*   Updated: 2022/11/11 18:06:06 by mmoumni          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -52,13 +52,6 @@ Cat &				Cat::operator=( Cat const & rhs )
 	}
 	return *this;
 }
-
-std::ostream &			operator<<( std::ostream & o, Cat const & i )
-{
-	o << "Cat's type: " << i.get_type() << std::endl;
-	return o;
-}
-
 
 /*
 ** --------------------------------- METHODS ----------------------------------

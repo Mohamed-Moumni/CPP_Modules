@@ -6,7 +6,7 @@
 /*   By: mmoumni <mmoumni@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/09 21:12:32 by mmoumni           #+#    #+#             */
-/*   Updated: 2022/11/10 00:11:18 by mmoumni          ###   ########.fr       */
+/*   Updated: 2022/11/10 14:16:27 by mmoumni          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,8 +20,8 @@ int main(void)
     const Animal* j = new Dog();
     const Animal* i = new Cat();
 
-    std::cout << j->get_type() << " " << std::endl;
-    std::cout << i->get_type() << " " << std::endl;
+    std::cout << j->getType() << " " << std::endl;
+    std::cout << i->getType() << " " << std::endl;
     i->makeSound();
     j->makeSound();
     meta->makeSound();

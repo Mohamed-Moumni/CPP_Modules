@@ -6,7 +6,7 @@
 /*   By: mmoumni <mmoumni@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/09 23:55:52 by mmoumni           #+#    #+#             */
-/*   Updated: 2022/11/10 00:09:22 by mmoumni          ###   ########.fr       */
+/*   Updated: 2022/11/11 18:06:17 by mmoumni          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,7 +28,5 @@ class Dog:public Animal
 		Dog &		operator=( Dog const & rhs );
 		void makeSound(void) const;
 };
-
-std::ostream &			operator<<( std::ostream & o, Dog const & i );
 
 #endif /* ************************************************************* DOG_H */
