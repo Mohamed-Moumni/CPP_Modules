@@ -6,10 +6,12 @@
 
 Brain::Brain()
 {
+	std::cout << "Brain Default Constructor" << std::endl;
 }
 
 Brain::Brain( const Brain & src )
 {
+	*this = src;
 }
 
 
@@ -19,6 +21,7 @@ Brain::Brain( const Brain & src )
 
 Brain::~Brain()
 {
+	std::cout << "Brain Destructor" << std::endl;
 }
 
 
@@ -28,10 +31,13 @@ Brain::~Brain()
 
 Brain &				Brain::operator=( Brain const & rhs )
 {
-	//if ( this != &rhs )
-	//{
-		//this->_value = rhs.getValue();
-	//}
+	if ( this != &rhs )
+	{
+		for (int i = 0; i < 100;i++)
+		{
+			this->ideas[i] = rhs.ideas[i];
+		}
+	}
 	return *this;
 }
 /*

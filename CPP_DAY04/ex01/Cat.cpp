@@ -6,7 +6,7 @@
 /*   By: mmoumni <mmoumni@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/09 23:44:33 by mmoumni           #+#    #+#             */
-/*   Updated: 2022/11/11 18:42:31 by mmoumni          ###   ########.fr       */
+/*   Updated: 2022/11/13 12:26:39 by mmoumni          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,7 +21,7 @@ Cat::Cat()
 {
 	std::cout << "Cat Default Constructor Called." << std::endl;
 	this->type = "Cat";
-	
+	this->brain = new Brain;
 }
 
 Cat::Cat( const Cat & src )
@@ -38,6 +38,7 @@ Cat::Cat( const Cat & src )
 Cat::~Cat()
 {
 	std::cout << "Cat Destructor Called." << std::endl;
+	delete this->brain;
 }
 
 
@@ -50,6 +51,9 @@ Cat &				Cat::operator=( Cat const & rhs )
 	if ( this != &rhs )
 	{
 		this->type = rhs.type;
+		delete this->brain;
+		this->brain = new Brain;
+		*(this->brain) = *(rhs.brain);
 	}
 	return *this;
 }

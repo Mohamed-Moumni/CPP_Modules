@@ -17,7 +17,6 @@ class Brain
 
 	private:
 		std::string ideas[100];
-
 };
 
 #endif /* *********************************************************** BRAIN_H */

@@ -6,7 +6,7 @@
 /*   By: mmoumni <mmoumni@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/09 23:39:07 by mmoumni           #+#    #+#             */
-/*   Updated: 2022/11/11 18:28:12 by mmoumni          ###   ########.fr       */
+/*   Updated: 2022/11/13 12:29:33 by mmoumni          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -48,6 +48,7 @@ Animal &				Animal::operator=( Animal const & rhs )
 	if ( this != &rhs )
 	{
 		this->type = rhs.type;
+		std::cout << "Here" << std::endl;
 	}
 	return *this;
 }

@@ -6,7 +6,7 @@
 /*   By: mmoumni <mmoumni@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/09 23:55:48 by mmoumni           #+#    #+#             */
-/*   Updated: 2022/11/11 18:06:23 by mmoumni          ###   ########.fr       */
+/*   Updated: 2022/11/13 12:24:49 by mmoumni          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,6 +21,7 @@ Dog::Dog()
 {
 	std::cout << "Dog default Constructor Called" << std::endl;
 	this->type = "Dog";
+	this->brain = new Brain;
 }
 
 Dog::Dog( const Dog & src )
@@ -37,6 +38,7 @@ Dog::Dog( const Dog & src )
 Dog::~Dog()
 {
 	std::cout << "Dog Destructor Called" << std::endl;
+	delete this->brain;
 }
 
 
@@ -49,6 +51,9 @@ Dog &				Dog::operator=( Dog const & rhs )
 	if ( this != &rhs )
 	{
 		this->type = rhs.type;
+		delete this->brain;
+		this->brain = new Brain;
+		*(this->brain) = *(rhs.brain);
 	}
 	return *this;
 }
