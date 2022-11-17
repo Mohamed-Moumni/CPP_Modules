@@ -4,12 +4,12 @@
 ** ------------------------------- CONSTRUCTOR --------------------------------
 */
 
-Bureaucrat::Bureaucrat()
+Bureaucrat::Bureaucrat():Name("RandomName"), grade(55)
 {
 
 }
 
-Bureaucrat::Bureaucrat( const Bureaucrat & src )
+Bureaucrat::Bureaucrat( const Bureaucrat & src ) : Name(src.Name)
 {
 	*this = src;
 }
@@ -25,8 +25,6 @@ Bureaucrat::Bureaucrat(const std::string & _name, unsigned int _grade): Name(_na
 	else
 		this->grade = _grade;
 }
-
-// Bureaucrat::GradeTooHighException::catchTooHigh(void): std::runtime_error("error"){}
 
 /*
 ** -------------------------------- DESTRUCTOR --------------------------------
@@ -73,12 +71,18 @@ unsigned int	Bureaucrat::getGrade(void) const
 }
 void	Bureaucrat::incrementGrade(void)
 {
-	grade--;
+	if (grade - 1 < 1)
+		throw GradeTooHighException();
+	else
+		grade--;
 }
 
 void	Bureaucrat::decrementGrade(void)
 {
-	grade++;
+	if (grade + 1 > 150)
+		throw GradeTooLowException();
+	else
+		grade++;
 }
 /*
 ** --------------------------------- ACCESSOR ---------------------------------

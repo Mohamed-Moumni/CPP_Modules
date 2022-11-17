@@ -7,20 +7,19 @@
 
 class Bureaucrat
 {
-
 	public:
 		class GradeTooHighException:public std::exception
 		{
 			public:
 				const char *what() const throw(){
-					return("Error1");
+					return("Error:Grade Is Too High");
 				}
 		};
 		class GradeTooLowException:public std::exception
 		{
 			public:
 				const char *what() const throw(){
-					return("Error1");
+					return("Error: Grade Is Too Low");
 				}
 		};
 		Bureaucrat();
@@ -36,7 +35,6 @@ class Bureaucrat
 	private:
 		const std::string Name;
 		unsigned int grade;
-
 };
 
 
