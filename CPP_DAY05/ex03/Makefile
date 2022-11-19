@@ -2,7 +2,7 @@ NAME = Form2
 
 CPP = c++
 
-FLAGS = -Wall -Wextra -Werror -static-libsan -fsanitize=address
+FLAGS = -Wall -Wextra -Werror -static-libsan
 
 STD_COMP = -std=c++98
 
