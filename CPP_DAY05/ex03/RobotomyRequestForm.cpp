@@ -6,7 +6,7 @@
 /*   By: mmoumni <mmoumni@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/18 16:55:36 by mmoumni           #+#    #+#             */
-/*   Updated: 2022/11/18 18:35:30 by mmoumni          ###   ########.fr       */
+/*   Updated: 2022/11/19 11:13:41 by mmoumni          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,6 +29,10 @@ RobotomyRequestForm::RobotomyRequestForm( const RobotomyRequestForm & src ):AFor
 	*this = src;	
 }
 
+RobotomyRequestForm::RobotomyRequestForm( const std::string _name,const std::string _target):AForm(_name, 72 ,45)
+{
+	target = _target;
+}
 
 /*
 ** -------------------------------- DESTRUCTOR --------------------------------
@@ -66,8 +70,9 @@ void	RobotomyRequestForm::execute(Bureaucrat const & executor) const
 	{
 		int rand_num;
 		std::cout << "Drilling noises\n";
-		rand_num = rand() % 10 + 1;
-		if(rand_num <= 5)
+		srand(time(NULL)) ;
+		rand_num = rand() % 2;
+		if(rand_num == 0)
 			std::cout << this->target << " robotomized successfully." << std::endl;
 		else
 			std::cout << this->target << " robotomy failed" << std::endl;

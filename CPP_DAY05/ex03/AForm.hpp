@@ -15,14 +15,8 @@
 
 # include <iostream>
 # include <string>
-# include "PresidentialPardonForm.hpp"
-# include "RobotomyRequestForm.hpp"
-# include "ShrubberyCreationForm.hpp"
 
 class Bureaucrat;
-class ShrubberyCreationForm;
-class PresidentialPardonForm;
-class RobotomyRequestForm;
 
 class AForm
 {

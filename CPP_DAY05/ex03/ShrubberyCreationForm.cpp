@@ -6,7 +6,7 @@
 /*   By: mmoumni <mmoumni@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/18 15:53:09 by mmoumni           #+#    #+#             */
-/*   Updated: 2022/11/18 18:30:59 by mmoumni          ###   ########.fr       */
+/*   Updated: 2022/11/19 11:15:29 by mmoumni          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,7 +27,10 @@ ShrubberyCreationForm::ShrubberyCreationForm( const ShrubberyCreationForm & src 
 	*this = src;
 }
 
-
+ShrubberyCreationForm::ShrubberyCreationForm( const std::string _name,const std::string _target):AForm(_name, 145,137)
+{
+	target = _target;
+}
 /*
 ** -------------------------------- DESTRUCTOR --------------------------------
 */
