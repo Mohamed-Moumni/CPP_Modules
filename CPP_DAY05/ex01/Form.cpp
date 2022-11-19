@@ -6,7 +6,7 @@
 /*   By: mmoumni <mmoumni@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/17 18:33:36 by mmoumni           #+#    #+#             */
-/*   Updated: 2022/11/17 22:17:47 by mmoumni          ###   ########.fr       */
+/*   Updated: 2022/11/19 13:42:37 by mmoumni          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -38,13 +38,14 @@ Form::Form(std::string _name, size_t _gradeSignReq, size_t  _gradeExecReq):Name(
 	if (gradeExecReq < 1 || gradeSignReq < 1)
 		throw GradeTooHighException();
 }
+
 /*
 ** -------------------------------- DESTRUCTOR --------------------------------
 */
 
 Form::~Form()
 {
-	
+		
 }
 
 
@@ -97,7 +98,6 @@ bool	Form::is_signed(void) const
 
 void		Form::beSigned(Bureaucrat const & bc)
 {
-	// std::cout <<this->gradeSignReq << std::endl;
 	if (bc.getGrade() > this->gradeSignReq)
 		throw GradeTooLowException();
 	else

@@ -6,7 +6,7 @@
 /*   By: mmoumni <mmoumni@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/18 17:41:28 by mmoumni           #+#    #+#             */
-/*   Updated: 2022/11/18 18:19:57 by mmoumni          ###   ########.fr       */
+/*   Updated: 2022/11/19 22:36:23 by mmoumni          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,7 +17,7 @@
 ** ------------------------------- CONSTRUCTOR --------------------------------
 */
 
-Bureaucrat::Bureaucrat():Name("RandomName"), grade(55)
+Bureaucrat::Bureaucrat():Name("RandomName"), grade(150)
 {
 
 }

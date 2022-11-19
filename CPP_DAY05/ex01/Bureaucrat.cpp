@@ -1,11 +1,23 @@
-#include "Bureaucrat.hpp"
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   Bureaucrat.cpp                                     :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: mmoumni <mmoumni@student.42.fr>            +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2022/11/19 13:39:12 by mmoumni           #+#    #+#             */
+/*   Updated: 2022/11/19 21:26:12 by mmoumni          ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
+# include "Bureaucrat.hpp"
 # include "Form.hpp"
 
 /*
 ** ------------------------------- CONSTRUCTOR --------------------------------
 */
 
-Bureaucrat::Bureaucrat():Name("RandomName"), grade(55)
+Bureaucrat::Bureaucrat():Name("RandomName"), grade(150)
 {
 
 }
@@ -36,7 +48,6 @@ Bureaucrat::~Bureaucrat()
 
 }
 
-
 /*
 ** --------------------------------- OVERLOAD ---------------------------------
 */
@@ -61,7 +72,7 @@ std::ostream	&	operator<<( std::ostream & o, Bureaucrat const & i )
 ** --------------------------------- METHODS ----------------------------------
 */
 
-std::string Bureaucrat::getName(void) const
+const std::string & Bureaucrat::getName(void) const
 {
 	return (Name);
 }

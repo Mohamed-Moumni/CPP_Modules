@@ -1,3 +1,15 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   Bureaucrat.hpp                                     :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: mmoumni <mmoumni@student.42.fr>            +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2022/11/19 13:16:25 by mmoumni           #+#    #+#             */
+/*   Updated: 2022/11/19 13:17:23 by mmoumni          ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #ifndef BUREAUCRAT_HPP
 # define BUREAUCRAT_HPP
 
@@ -24,17 +36,17 @@ class Bureaucrat
 		};
 		Bureaucrat();
 		Bureaucrat( Bureaucrat const & src );
-		Bureaucrat(const std::string & _name, unsigned int _grade);
+		Bureaucrat(const std::string & _name, size_t _grade);
 		~Bureaucrat();
 		Bureaucrat &		operator=( Bureaucrat const & rhs );
 		std::string		getName(void) const;
-		unsigned int	getGrade(void) const;
+		size_t	getGrade(void) const;
 		void incrementGrade(void);
 		void decrementGrade(void);
 
 	private:
 		const std::string Name;
-		unsigned int grade;
+		size_t grade;
 };
 
 

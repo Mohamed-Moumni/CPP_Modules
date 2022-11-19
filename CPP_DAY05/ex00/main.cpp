@@ -6,7 +6,7 @@
 /*   By: mmoumni <mmoumni@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/17 00:09:53 by mmoumni           #+#    #+#             */
-/*   Updated: 2022/11/17 18:11:53 by mmoumni          ###   ########.fr       */
+/*   Updated: 2022/11/19 13:38:30 by mmoumni          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,7 +16,7 @@ int main(void)
 {
     try
     {
-        Bureaucrat obj("mohamed",1);
+        Bureaucrat obj("mohamed",2);
         obj.incrementGrade();
         std::cout << obj;
     }

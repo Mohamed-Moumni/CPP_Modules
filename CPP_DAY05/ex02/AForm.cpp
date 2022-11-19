@@ -10,7 +10,7 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "AForm.hpp"
+# include "AForm.hpp"
 # include "Bureaucrat.hpp"
 
 /*
@@ -97,7 +97,6 @@ bool	AForm::is_signed(void) const
 
 void		AForm::beSigned(Bureaucrat const & bc)
 {
-	// std::cout <<this->gradeSignReq << std::endl;
 	if (bc.getGrade() > this->gradeSignReq)
 		throw GradeTooLowException();
 	else

@@ -6,7 +6,7 @@
 /*   By: mmoumni <mmoumni@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/18 15:52:59 by mmoumni           #+#    #+#             */
-/*   Updated: 2022/11/18 17:43:49 by mmoumni          ###   ########.fr       */
+/*   Updated: 2022/11/18 21:40:49 by mmoumni          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,6 +25,7 @@ class ShrubberyCreationForm: public AForm
 
 		ShrubberyCreationForm();
 		ShrubberyCreationForm( ShrubberyCreationForm const & src );
+		ShrubberyCreationForm( const std::string _name,const std::string _target,size_t signGrade, size_t execGrade);
 		~ShrubberyCreationForm();
 
 		ShrubberyCreationForm	&	operator=( ShrubberyCreationForm const & rhs );

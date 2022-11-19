@@ -6,7 +6,7 @@
 /*   By: mmoumni <mmoumni@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/18 17:39:37 by mmoumni           #+#    #+#             */
-/*   Updated: 2022/11/18 18:14:03 by mmoumni          ###   ########.fr       */
+/*   Updated: 2022/11/18 21:39:50 by mmoumni          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,6 +27,10 @@ PresidentialPardonForm::PresidentialPardonForm( const PresidentialPardonForm & s
 	*this = src;
 }
 
+PresidentialPardonForm::PresidentialPardonForm( const std::string _name,const std::string _target,size_t signGrade, size_t execGrade):AForm(_name, signGrade, execGrade)
+{
+	target = _target;
+}
 
 /*
 ** -------------------------------- DESTRUCTOR --------------------------------

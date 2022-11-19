@@ -1,10 +1,22 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   Bureaucrat.cpp                                     :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: mmoumni <mmoumni@student.42.fr>            +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2022/11/19 13:16:20 by mmoumni           #+#    #+#             */
+/*   Updated: 2022/11/19 13:18:14 by mmoumni          ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "Bureaucrat.hpp"
 
 /*
 ** ------------------------------- CONSTRUCTOR --------------------------------
 */
 
-Bureaucrat::Bureaucrat():Name("RandomName"), grade(55)
+Bureaucrat::Bureaucrat():Name("RandomName"), grade(150)
 {
 
 }
@@ -14,7 +26,7 @@ Bureaucrat::Bureaucrat( const Bureaucrat & src ) : Name(src.Name)
 	*this = src;
 }
 
-Bureaucrat::Bureaucrat(const std::string & _name, unsigned int _grade): Name(_name)
+Bureaucrat::Bureaucrat(const std::string & _name, size_t _grade): Name(_name)
 {
 	if (_grade < 1)
 		throw GradeTooHighException();
@@ -65,7 +77,7 @@ std::string Bureaucrat::getName(void) const
 	return (Name);
 }
 
-unsigned int	Bureaucrat::getGrade(void) const
+size_t	Bureaucrat::getGrade(void) const
 {
 	return (grade);
 }

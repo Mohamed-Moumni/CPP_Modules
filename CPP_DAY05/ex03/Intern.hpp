@@ -6,7 +6,7 @@
 /*   By: mmoumni <mmoumni@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/18 18:40:01 by mmoumni           #+#    #+#             */
-/*   Updated: 2022/11/19 13:03:50 by mmoumni          ###   ########.fr       */
+/*   Updated: 2022/11/19 22:37:42 by mmoumni          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,13 +15,12 @@
 
 # include <iostream>
 # include <string>
-# include "Bureaucrat.hpp"
-# include "AForm.hpp"
 # include <exception>
 
 class ShrubberyCreationForm;
 class PresidentialPardonForm;
 class RobotomyRequestForm;
+class AForm;
 
 class Intern
 {

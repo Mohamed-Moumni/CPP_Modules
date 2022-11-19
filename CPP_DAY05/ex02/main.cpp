@@ -6,7 +6,7 @@
 /*   By: mmoumni <mmoumni@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/18 18:20:10 by mmoumni           #+#    #+#             */
-/*   Updated: 2022/11/18 18:38:12 by mmoumni          ###   ########.fr       */
+/*   Updated: 2022/11/18 18:56:13 by mmoumni          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,8 +20,8 @@ int main(void)
 {
     try
     {
-        Bureaucrat bure("mohamed",50);
-        PresidentialPardonForm obj2;
+        Bureaucrat bure("mohamed",45);
+        RobotomyRequestForm obj2;
         bure.signForm(obj2);
         obj2.execute(bure);
     }
