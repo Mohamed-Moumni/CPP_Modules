@@ -6,7 +6,7 @@
 /*   By: mmoumni <mmoumni@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/22 00:10:09 by mmoumni           #+#    #+#             */
-/*   Updated: 2022/11/23 19:09:57 by mmoumni          ###   ########.fr       */
+/*   Updated: 2022/11/24 13:11:38 by mmoumni          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,7 +31,6 @@ class Array
         Array( Array const & src);
         Array & operator=(Array const & rhs);
         T & operator[]( unsigned int rhs);
-        T   operator[]( unsigned int rhs) const;
         unsigned int    size(void) const;
         unsigned int    get_len(void) const;
     private:
@@ -84,13 +83,6 @@ template<typename T> T & Array<T>::operator[]( unsigned int src )
         throw IndexException();
     return (array[src]);
 }
-
-// template<typename T> T Array<T>::operator[]( unsigned int src ) const
-// {
-//     if (src < 0 || src >= _size)
-//         throw IndexException();
-//     return (array[src]);
-// }
 
 template<typename T> unsigned int Array<T>::size(void) const
 {
