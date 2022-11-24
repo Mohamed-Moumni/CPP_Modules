@@ -6,7 +6,7 @@
 #    By: mmoumni <mmoumni@student.42.fr>            +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/11/22 00:09:45 by mmoumni           #+#    #+#              #
-#    Updated: 2022/11/23 18:36:30 by mmoumni          ###   ########.fr        #
+#    Updated: 2022/11/24 14:30:08 by mmoumni          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -16,7 +16,7 @@ CPP = c++
 
 FLAGS = -Wall -Wextra -Werror
 
-STD_COMP = -std=c++98
+STD_COMP = -std=c++98 
 
 SRC = main.cpp
 
