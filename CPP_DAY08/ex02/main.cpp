@@ -6,14 +6,12 @@
 /*   By: mmoumni <mmoumni@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/25 21:07:24 by mmoumni           #+#    #+#             */
-/*   Updated: 2022/11/26 00:31:30 by mmoumni          ###   ########.fr       */
+/*   Updated: 2022/11/26 11:16:17 by mmoumni          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "MutantStack.hpp"
-#include <iostream>
-#include <vector>
-#include <list>
+
 
 int main()
 {
