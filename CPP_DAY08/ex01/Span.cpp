@@ -6,7 +6,7 @@
 /*   By: mmoumni <mmoumni@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/25 18:11:31 by mmoumni           #+#    #+#             */
-/*   Updated: 2022/11/26 08:24:31 by mmoumni          ###   ########.fr       */
+/*   Updated: 2022/11/26 08:59:28 by mmoumni          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -67,7 +67,7 @@ int Span::shortestSpan(void)
 {
     int min = 1e9;
 
-    if (sp.size() <= 1 || index == N)
+    if (sp.size() <= 1)
         throw std::runtime_error("Span Error");    
     std::sort(sp.begin(), sp.end());
     std::vector<int>::iterator it = sp.begin();
@@ -82,7 +82,7 @@ int Span::shortestSpan(void)
 
 int Span::longestSpan(void)
 {
-    if (sp.size() <= 1 || index == N)
+    if (sp.size() <= 1)
         throw std::runtime_error("Span Error");
     std::sort(sp.begin(), sp.end());
     std::vector<int>::iterator it = sp.begin();

@@ -6,7 +6,7 @@
 /*   By: mmoumni <mmoumni@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/23 19:38:49 by mmoumni           #+#    #+#             */
-/*   Updated: 2022/11/25 18:01:15 by mmoumni          ###   ########.fr       */
+/*   Updated: 2022/11/26 08:57:04 by mmoumni          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,7 +16,7 @@
 #include<algorithm>
 #include<iostream>
 
-template<typename T> bool easyfind(T & cont, int value)
+template<typename T> bool easyfind(T const & cont, int value)
 {
     bool finded;
 
