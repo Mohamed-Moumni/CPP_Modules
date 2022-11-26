@@ -6,7 +6,7 @@
 /*   By: mmoumni <mmoumni@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/29 10:29:51 by mmoumni           #+#    #+#             */
-/*   Updated: 2022/11/03 16:14:22 by mmoumni          ###   ########.fr       */
+/*   Updated: 2022/11/11 10:44:51 by mmoumni          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -54,7 +54,7 @@ Fixed::~Fixed()
 ** --------------------------------- OVERLOAD ---------------------------------
 */
 
-Fixed	&	Fixed::operator=( Fixed const & rhs )
+Fixed	& Fixed::operator=( Fixed const & rhs )
 {
 	std::cout << "Copy assignement operator called " << std::endl;
 	if ( this != &rhs )
@@ -94,6 +94,11 @@ float   Fixed::toFloat( void ) const
 int Fixed::toInt( void ) const
 {
 	return (this->fixed_point >> Fixed::fraction);
+}
+
+void Fixed::setInt(int a)
+{
+	this->fixed_point = a;
 }
 /*
 ** --------------------------------- ACCESSOR ---------------------------------

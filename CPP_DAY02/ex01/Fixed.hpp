@@ -6,7 +6,7 @@
 /*   By: mmoumni <mmoumni@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/29 10:29:46 by mmoumni           #+#    #+#             */
-/*   Updated: 2022/10/29 19:58:36 by mmoumni          ###   ########.fr       */
+/*   Updated: 2022/11/11 10:44:55 by mmoumni          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,13 +25,14 @@ class Fixed
 		Fixed();
 		Fixed( Fixed const & src );
 		~Fixed();
-		Fixed &		operator=( Fixed const & rhs );
+		Fixed 	& operator=( Fixed const & rhs );
 		int		getRawBits( void ) const;
 		void	setRawBits( int const raw );
         float   toFloat( void ) const;
         int     toInt( void ) const;
         Fixed( const int number);
         Fixed( const float number);
+		void setInt(int a);
 	private:
 		int fixed_point;
 		static const int fraction = 8;

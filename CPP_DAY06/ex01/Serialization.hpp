@@ -1,24 +1,30 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.cpp                                           :+:      :+:    :+:   */
+/*   Serialization.hpp                                  :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mmoumni <mmoumni@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/11/20 23:20:18 by mmoumni           #+#    #+#             */
-/*   Updated: 2022/11/24 20:57:48 by mmoumni          ###   ########.fr       */
+/*   Created: 2022/11/20 22:59:49 by mmoumni           #+#    #+#             */
+/*   Updated: 2022/11/20 23:08:13 by mmoumni          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "Identify_Real_Type.hpp"
-class D
+#ifndef SERIALIZATION_HPP
+#define SERIALIZATION_HPP
+
+#include <iostream>
+#include <stdint.h>
+
+typedef struct Data
 {
-};
-int main(void)
-{
-    Base * ptr = generate();
-    D *ptr2;
-    identify(ptr2);
-    // identify(*ptr);
-    return (0);
-}
+    int x;
+    int y;
+    int z;
+}Data;
+
+uintptr_t   serialize(Data* ptr);
+
+Data* deserialize(uintptr_t raw);
+
+#endif

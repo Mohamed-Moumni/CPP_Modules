@@ -1,24 +1,28 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.cpp                                           :+:      :+:    :+:   */
+/*   easyfind.hpp                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mmoumni <mmoumni@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/11/20 23:20:18 by mmoumni           #+#    #+#             */
-/*   Updated: 2022/11/24 20:57:48 by mmoumni          ###   ########.fr       */
+/*   Created: 2022/11/23 19:38:49 by mmoumni           #+#    #+#             */
+/*   Updated: 2022/11/25 18:01:15 by mmoumni          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "Identify_Real_Type.hpp"
-class D
+#ifndef EASYFIND_HPP
+#define EASYFIND_HPP
+
+#include<algorithm>
+#include<iostream>
+
+template<typename T> bool easyfind(T & cont, int value)
 {
-};
-int main(void)
-{
-    Base * ptr = generate();
-    D *ptr2;
-    identify(ptr2);
-    // identify(*ptr);
-    return (0);
+    bool finded;
+
+    std::sort(cont.begin(), cont.end());
+    finded = std::binary_search(cont.begin(), cont.end(), value);
+    return (finded);
 }
+
+#endif
