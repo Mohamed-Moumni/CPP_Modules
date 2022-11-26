@@ -6,7 +6,7 @@
 /*   By: mmoumni <mmoumni@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/25 18:11:31 by mmoumni           #+#    #+#             */
-/*   Updated: 2022/11/26 08:59:28 by mmoumni          ###   ########.fr       */
+/*   Updated: 2022/11/26 21:00:35 by mmoumni          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -90,16 +90,26 @@ int Span::longestSpan(void)
     return (*it2 - *it);
 }
 
-void Span::fill_all(unsigned int n)
+void Span::fill_all(std::vector<int>::iterator start, std::vector<int>::iterator end)
 {
-    if (n >= N)
-        throw std::runtime_error("Full span");
+    int count;
+
+    count = end - start;
+    if (count < 0)
+        throw std::runtime_error("invalid range of Iterator");
     else
     {
-        srand(time(NULL));
-        for (unsigned int i = 0;i < N - n;i++)
+        if (index == N)
+            throw std::runtime_error("Full Span");
+        else
         {
-            sp[i] = rand() % 10000;
-        }   
+            std::vector<int>::iterator it = start;
+            while (it != end && index < N)
+            {
+                sp[index] = *it;
+                index++;
+                it++;   
+            }
+        }
     }
 }

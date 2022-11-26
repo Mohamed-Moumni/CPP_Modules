@@ -6,7 +6,7 @@
 /*   By: mmoumni <mmoumni@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/25 18:11:34 by mmoumni           #+#    #+#             */
-/*   Updated: 2022/11/25 20:54:26 by mmoumni          ###   ########.fr       */
+/*   Updated: 2022/11/26 21:17:14 by mmoumni          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,7 +30,7 @@ class Span
         void    addNumber( int n);
         int     shortestSpan();
         int     longestSpan();
-        void    fill_all(unsigned int n);
+        void    fill_all(std::vector<int>::iterator start, std::vector<int>::iterator end);
 };
 
 #endif

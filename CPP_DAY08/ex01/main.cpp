@@ -6,7 +6,7 @@
 /*   By: mmoumni <mmoumni@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/25 18:11:29 by mmoumni           #+#    #+#             */
-/*   Updated: 2022/11/25 21:02:44 by mmoumni          ###   ########.fr       */
+/*   Updated: 2022/11/26 21:00:14 by mmoumni          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,9 +35,18 @@ int main()
     }
     try
     {
-        Span t(10);
+        Span t(4);
+        t.addNumber(6);
+        t.addNumber(6);
+        t.addNumber(6);
+        t.addNumber(6);
+        std::vector<int> arr;
+        arr.push_back(5);
+        arr.push_back(6);
+        arr.push_back(7);
+        arr.push_back(8);
         
-        t.fill_all(19);
+        t.fill_all(arr.begin(), arr.end());
         std::cout << t.shortestSpan() << std::endl;
         std::cout << t.longestSpan() << std::endl;
     }
