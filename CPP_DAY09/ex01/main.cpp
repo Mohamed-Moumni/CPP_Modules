@@ -10,6 +10,13 @@ int main(int ac, char *av[])
         exit(1);
     }
     std::string rpn(av[1]);
-    RPN(rpn);
+    try
+    {
+        RPN(rpn);
+    }
+    catch(const std::exception& e)
+    {
+        std::cerr << e.what() << '\n';
+    }
     return (0);
 }

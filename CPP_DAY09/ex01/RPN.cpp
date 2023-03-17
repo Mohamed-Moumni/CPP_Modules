@@ -15,10 +15,7 @@ void operation(std::stack<int> & stack, char oper)
             if (val1 != 0)
                 stack.push(val2 / val1);
             else
-            {
-                std::cout << "Error\n";
-                exit(1);
-            }
+                throw std::runtime_error("Divided By Zero");
         }
         if (oper == '+')
         {
@@ -37,10 +34,7 @@ void operation(std::stack<int> & stack, char oper)
         }
     }
     else
-    {
-        std::cout << "Error\n";
-        exit(1);
-    }
+        throw std::runtime_error("Error");
 }
 
 void    RPN(std::string numbers)
@@ -64,16 +58,10 @@ void    RPN(std::string numbers)
             else if (numbers[i] == '/')
                 operation(stack, '/');
             else
-            {
-                std::cout << "Error\n";
-                exit(1);
-            }
+                throw std::runtime_error("Error");
         } 
     }
     if (stack.size() > 1)
-    {
-        std::cout << "Error\n";
-        exit(1);
-    }
+        throw std::runtime_error("Error");
     std::cout << stack.top() << std::endl;
 }
