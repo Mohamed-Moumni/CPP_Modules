@@ -1,5 +1,13 @@
 #include "RPN.hpp"
 
+void    division(std::stack<int> & stack, int val1, int val2)
+{
+    if (val1 != 0)
+        stack.push(val2 / val1);
+    else
+        throw std::runtime_error("Divided By Zero");
+}
+
 void operation(std::stack<int> & stack, char oper)
 {
     int val1,val2;
@@ -10,27 +18,24 @@ void operation(std::stack<int> & stack, char oper)
         stack.pop();
         val2 = stack.top();
         stack.pop();
-        if (oper == '/')
-        {
-            if (val1 != 0)
-                stack.push(val2 / val1);
-            else
-                throw std::runtime_error("Divided By Zero");
-        }
         if (oper == '+')
         {
-            stack.push(val2 + val1);
-            return;
+            std::cout << val1 << "   " << val2 << std::endl;
         }
-        if (oper == '*')
+        switch (oper)
         {
-            stack.push(val2 * val1);
-            return ;
-        }
-        if (oper == '-')
-        {
-            stack.push(val2 - val1);
-            return ;
+            case '+':
+                stack.push(val2 + val1);
+                break;
+            case '-':
+                stack.push(val2 - val1);
+                break;
+            case '*':
+                stack.push(val2 * val1);
+                break;
+            case '/':
+                division(stack, val1, val2);
+                break;
         }
     }
     else
@@ -45,20 +50,26 @@ void    RPN(std::string numbers)
     {
         if (numbers[i] != ' ')
         {
-            if (numbers[i] >= '0' && numbers[i] <= '9')
+            if (!std::isdigit(numbers[i]) &&
+                (numbers[i] != '*' && numbers[i] != '/' && numbers[i] != '+' && numbers[i] != '-'))
+                    throw std::runtime_error("Error");
+            switch (numbers[i])
             {
-                stack.push(numbers[i] - 48);
+                case '+':
+                    operation(stack, '+');
+                    break;
+                case '-':
+                    operation(stack, '-');
+                    break;
+                case '*':
+                    operation(stack, '*');
+                    break;
+                case '/':
+                    operation(stack, '/');
+                default:
+                    stack.push(numbers[i] - 48);
+                    break;
             }
-            else if (numbers[i] == '+')
-                operation(stack, '+');
-            else if (numbers[i] == '-')
-                operation(stack, '-');
-            else if (numbers[i] == '*')
-                operation(stack, '*');
-            else if (numbers[i] == '/')
-                operation(stack, '/');
-            else
-                throw std::runtime_error("Error");
         } 
     }
     if (stack.size() > 1)
