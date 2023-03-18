@@ -3,26 +3,31 @@
 void    BitcoinExchane::getData(std::ifstream & file, int opt)
 {
     std::string line;
+    int         start;
 
+    start = 0;
     while (getline(file, line))
     {
+        if (start != 0)
+            this->get_line(line, opt);
+        start++;
+        line.clear();
         if (file.eof())
             break ;
-        this->get_line(line, opt);
-        line.clear();
     }
 }
 
 void        BitcoinExchane::performQuery(const std::string date, const std::string value)
 {
-    if (!checkDate(date))
-        return ;
-    if (!checkValue(value))
-        return ;
+    double _value;
+
+    checkDate(date);
+    checkValue(value);
+    _value = atof(value.c_str());
+    if (_value > 1000)
+        throw std::runtime_error(std::string("Error: too large a number " + value));
     if (this->BitcoinEx.lower_bound(date) != BitcoinEx.end())
-    {
-        std::cout << date << " => " << value << " = " << this->BitcoinEx.lower_bound(date)->second * atof(value.c_str()) << std::endl;
-    }
+        std::cout << date << " => " << value << " = " << this->BitcoinEx.lower_bound(date)->second * _value << std::endl;
 }
 
 void    BitcoinExchane::get_line(const std::string line, int opt)
@@ -37,20 +42,25 @@ void    BitcoinExchane::get_line(const std::string line, int opt)
         found = line.find("|", 0);
     date = line.substr(0, found);
     value = line.substr(found +1);
-    if (opt)
-        this->addElement(date, value);
-    else
-        this->performQuery(date, value);
+    try
+    {
+        if (opt)
+            this->addElement(date, value);
+        else
+            this->performQuery(date, value);
+    }
+    catch(const std::exception& e)
+    {
+        std::cerr << e.what() << '\n';
+    }
     date.clear();
     value.clear();
 }
 
 void    BitcoinExchane::addElement(const std::string date, const std::string value)
 {
-    if (!checkDate(date))
-        return ;
-    if (!checkValue(value))
-        return ;
+    checkDate(date);
+    checkValue(value);
     BitcoinEx[date] = atof(value.c_str());
 }
 
@@ -114,27 +124,30 @@ int         BitcoinExchane::getDay(const std::string date, int pos)
     return (day);
 }
 
-bool        BitcoinExchane::checkValue(const std::string value)
+void    BitcoinExchane::checkValue(const std::string value)
 {
     int i;
     int point_count;
 
     i = 0;
     point_count = 0;
+    while (value[i] && value[i] == ' ')
+        i++;
     while (value[i])
     {
         if (value[i] == '.')
             point_count++;
-        else if (value[i] < '0' && value[i] > '9')
-            return (false);
+        else if (value[i] == '-')
+            throw std::runtime_error(std::string("Error: not a positive number " + value));
+        else if (value[i] < '0' || value[i] > '9')
+            throw std::runtime_error(std::string("Error: invalid number " + value));
         i++;
     }
     if (point_count > 1)
-        return (false);
-    return (true);
+        throw std::runtime_error(std::string("Error: There is more than one . in the number " + value));
 }
 
-bool    BitcoinExchane::checkDate(const std::string  date)
+void    BitcoinExchane::checkDate(const std::string  date)
 {
     int year = 0, month = 0, day = 0,i;
 
@@ -142,40 +155,29 @@ bool    BitcoinExchane::checkDate(const std::string  date)
     while (date[i] == ' ')
         i++;
     year = getYear(date, i);
-
     if (date[i + 4] != '-')
-        return (false);
-
+        throw std::runtime_error(std::string("Error in Date reprsentation " + date));
     i = i + 5;
     month = getMonth(date, i);
-
     if (date[i + 2] != '-')
-        return (false);
-
+        throw std::runtime_error(std::string("Error in Date reprsentation " + date));
     i = i + 3;
     day = getDay(date, i);
-
     if (year < 2009 || month < 1 || month > 12 || day > 31 || day < 1)
-        return (false);
-
-    if (!(this->checkYear(year, month, day)))
-    {
-        return (false);
-    }
-    return true;
+        throw std::runtime_error(std::string("Error in Date reprsentation " + date));
+    this->checkYear(year, month, day);
 }
 
-bool    BitcoinExchane::checkYear(int year, int month, int day)
+void    BitcoinExchane::checkYear(int year, int month, int day)
 {
     if (year < 2009)
-        return (false);
+        throw std::runtime_error("Error in Year representation");
     if (month < 1 || month > 12)
-        return (false);
+        throw std::runtime_error("Error in month representation");
     if (day < 1 || day > 31)
-        return (false);
-    if (day == 29 && !is_leap(year))
-        return (false);
-    return (true);
+        throw std::runtime_error("Error in day representation");
+    if (day == 29 && !is_leap(year) && month == 2)
+        throw std::runtime_error("Error in leap year validation");
 }
 
 bool    BitcoinExchane::is_leap(int year)

@@ -6,30 +6,22 @@ int main(int ac, char *av[])
     std::ifstream   inputf;
     BitcoinExchane  btcExch;
 
-    if (ac != 2)
+    try
     {
-        std::cout << "Error: could not open file.\n";
-        exit(1);
+        if (ac != 2)
+            throw std::runtime_error("Error");
+        ifs.open("data.csv", std::ifstream::in);
+        if (!ifs.good())
+            throw std::runtime_error("Database not provided");
+        btcExch.getData(ifs, 1);
+        inputf.open(av[1], std::ifstream::in);
+        if (!inputf.good())
+            throw std::runtime_error("Error: could not open file.");
+        btcExch.getData(inputf, 0);
     }
-    ifs.open("data.csv", std::ifstream::in);
-    if (!ifs.good())
+    catch(const std::exception& e)
     {
-        std::cout << "Database not provided\n";
-        exit(EXIT_FAILURE);
+        std::cerr << e.what() << '\n';
     }
-    btcExch.getData(ifs, 1);
-    // std::map<std::string, double>::iterator it;
-    // it = btcExch.BitcoinEx.begin();
-    // for (;it != btcExch.BitcoinEx.end(); it++)
-    // {
-    //     std::cout << it->first << "       " << it->second << std::endl;
-    // }
-    inputf.open(av[1], std::ifstream::in);
-    if (!inputf.good())
-    {
-        std::cout << "Error: could not open file.\n";
-        exit(EXIT_FAILURE); 
-    }
-    btcExch.getData(inputf, 0);
     return (0);
 }
