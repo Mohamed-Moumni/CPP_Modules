@@ -11,17 +11,12 @@ void    division(std::stack<int> & stack, int val1, int val2)
 void operation(std::stack<int> & stack, char oper)
 {
     int val1,val2;
-
     if (stack.size() > 1)
     {
         val1 = stack.top();
         stack.pop();
         val2 = stack.top();
         stack.pop();
-        if (oper == '+')
-        {
-            std::cout << val1 << "   " << val2 << std::endl;
-        }
         switch (oper)
         {
             case '+':
@@ -66,6 +61,7 @@ void    RPN(std::string numbers)
                     break;
                 case '/':
                     operation(stack, '/');
+                    break;
                 default:
                     stack.push(numbers[i] - 48);
                     break;
