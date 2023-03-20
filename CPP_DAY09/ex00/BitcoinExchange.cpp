@@ -3,14 +3,10 @@
 void    getData(std::map<std::string, double, std::greater<std::string> > & BitcoinEx, std::ifstream & file, int opt)
 {
     std::string line;
-    int         start;
 
-    start = 0;
     while (getline(file, line))
     {
-        if (start != 0)
-            get_line(BitcoinEx, line, opt);
-        start++;
+        get_line(BitcoinEx, line, opt);
         line.clear();
         if (file.eof())
             break ;
@@ -27,7 +23,7 @@ void        performQuery(std::map<std::string, double, std::greater<std::string>
     if (_value > 1000)
         throw std::runtime_error(std::string("Error: too large a number " + value));
     if (_bitcoinExchange.lower_bound(date) != _bitcoinExchange.end())
-        std::cout << date << " => " << value << " = " << _bitcoinExchange.lower_bound(date)->second * _value << std::endl;
+        std::cout << date << " => " << value << " = " << std::setprecision(2) << std::fixed << _bitcoinExchange.lower_bound(date)->second * _value << std::endl;
 }
 
 void    get_line(std::map<std::string, double, std::greater<std::string> > & _bitcoinExchange, const std::string line, int opt)
@@ -41,7 +37,7 @@ void    get_line(std::map<std::string, double, std::greater<std::string> > & _bi
     else
         found = line.find("|", 0);
     date = line.substr(0, found);
-    value = line.substr(found +1);
+    value = line.substr(found + 1);
     try
     {
         if (opt)
@@ -128,8 +124,10 @@ void    checkValue(const std::string value)
 {
     int i;
     int point_count;
+    int j;
 
     i = 0;
+    j = 0;
     point_count = 0;
     while (value[i] && value[i] == ' ')
         i++;
@@ -142,6 +140,7 @@ void    checkValue(const std::string value)
         else if (value[i] < '0' || value[i] > '9')
             throw std::runtime_error(std::string("Error: invalid number " + value));
         i++;
+        j++;
     }
     if (point_count > 1)
         throw std::runtime_error(std::string("Error: There is more than one . in the number " + value));
