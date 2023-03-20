@@ -11,6 +11,8 @@ int main(int ac, char *av[])
             throw std::runtime_error("Invalid Arguments");
         store_seq(vect, deck, &av[1]);
         print_sequence(vect, false);
+        MergeInsertSortVect(vect, 0, vect.size() - 1);
+        print_sequence(vect, true);
     }
     catch(const std::exception& e)
     {

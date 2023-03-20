@@ -92,3 +92,77 @@ void    checkcmp(std::string & num, int plus, int minus)
             throw std::runtime_error("Error");
     }
 }
+
+void    MergeInsertSortVect(std::vector<int> & vect, int left, int right)
+{
+    int mid;
+
+    if (right - left + 1 > 2)
+    {
+        mid = (right + left) / 2;
+        MergeInsertSortVect(vect, left, mid);
+        MergeInsertSortVect(vect, mid + 1, right);
+        Merge(vect, left, mid, right);
+    }
+    else
+    {
+        InsertSort(vect, left, right);
+    }
+}
+
+void    InsertSort(std::vector<int> & vect, int left, int right)
+{
+    int i, j;
+
+    i = left + 1;
+    for (; i <= right; i++)
+    {
+        j = i;
+        while (j > left && vect[j - 1] > vect[j])
+        {
+            std::swap(vect[j - 1], vect[j]);
+            j--;
+        }
+    }
+}
+
+void    Merge(std::vector<int> & vect, int p, int q, int r)
+{
+    int L, R, i, j, k;
+
+    L = q - p + 1;
+    R = r - q;
+    std::vector<int> left(L);
+    std::vector<int> right(R);
+    for (int i = 0; i < L; i++)
+        left[i] = vect[p + i];
+    for (int j = 0; j < R; j++)
+        right[j] = vect[q + j + 1];
+    i = 0;j = 0;k = p;
+    while (i < L && j < R)
+    {
+        if (left[i] <= right[j])
+        {
+            vect[k] = left[i];
+            i++;
+        }
+        else
+        {
+            vect[k] = right[j];
+            j++;
+        }
+        k++;
+    }
+    while (i < L)
+    {
+        vect[k] = left[i];
+        i++;
+        k++;
+    }
+    while (j < R)
+    {
+        vect[k] = right[j];
+        j++;
+        k++;
+    }
+}

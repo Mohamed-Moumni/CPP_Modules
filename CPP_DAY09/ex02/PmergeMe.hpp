@@ -13,4 +13,7 @@ int     getNumber(std::string number);
 void    print_sequence(std::vector<int> & vect, bool sorted);
 void    is_integer(std::string & num);
 void    checkcmp(std::string & num, int plus, int minus);
+void    MergeInsertSortVect(std::vector<int> & vect, int left, int right);
+void    Merge(std::vector<int> & vect, int p, int q, int r);
+void    InsertSort(std::vector<int> & vect, int left, int right);
 #endif
