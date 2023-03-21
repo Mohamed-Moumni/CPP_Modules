@@ -6,7 +6,7 @@
 /*   By: mmoumni <mmoumni@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/21 15:13:12 by mmoumni           #+#    #+#             */
-/*   Updated: 2023/03/21 15:30:06 by mmoumni          ###   ########.fr       */
+/*   Updated: 2023/03/21 15:49:40 by mmoumni          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,7 +30,7 @@ void        performQuery(std::map<std::string, double, std::greater<std::string>
     double _value;
 
     checkDate(date);
-    checkValue(value);
+    checkValue(value, false);
     _value = atof(value.c_str());
     if (_value > 1000)
         throw std::runtime_error(std::string("Error: too large a number " + value));
@@ -68,7 +68,7 @@ void    get_line(std::map<std::string, double, std::greater<std::string> > & _bi
 void    addElement(std::map<std::string, double, std::greater<std::string> > & BitcoinEx, const std::string date, const std::string value)
 {
     checkDate(date);
-    checkValue(value);
+    checkValue(value, true);
     BitcoinEx[date] = atof(value.c_str());
 }
 
@@ -132,14 +132,16 @@ int         getDay(const std::string date, int pos)
     return (day);
 }
 
-void    checkValue(const std::string value)
+void    checkValue(const std::string value, bool oper)
 {
     int i;
     int point_count;
     int j;
+    int digitCount;
 
     i = 0;
     j = 0;
+    digitCount = 0;
     point_count = 0;
     while (value[i] && value[i] == ' ')
         i++;
@@ -151,11 +153,13 @@ void    checkValue(const std::string value)
             throw std::runtime_error(std::string("Error: not a positive number " + value));
         else if (value[i] < '0' || value[i] > '9')
             throw std::runtime_error(std::string("Error: invalid number " + value));
+        if (!point_count)
+            digitCount++;
         i++;
         j++;
     }
-    if (point_count > 1)
-        throw std::runtime_error(std::string("Error: There is more than one . in the number " + value));
+    if ((point_count > 1 || digitCount > 4) && !oper)
+        throw std::runtime_error(std::string("Error: invalid Number" + value));
 }
 
 void    checkDate(const std::string  date)
@@ -179,9 +183,8 @@ void    checkDate(const std::string  date)
     i = i + 2;
     while (date[i])
     {
-        if (date[i] != ' ')
+        if (date[i++] != ' ')
             throw std::runtime_error(std::string("Error in Date representation " + date));
-        i++;
     }
     checkYear(year, month, day);
 }

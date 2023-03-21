@@ -6,7 +6,7 @@
 /*   By: mmoumni <mmoumni@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/21 15:13:16 by mmoumni           #+#    #+#             */
-/*   Updated: 2023/03/21 15:13:17 by mmoumni          ###   ########.fr       */
+/*   Updated: 2023/03/21 15:49:07 by mmoumni          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,7 +27,7 @@ void        addElement(std::map<std::string, double, std::greater<std::string> >
 int         getYear(const std::string date, int pos);
 int         getMonth(const std::string date, int pos);
 int         getDay(const std::string date, int pos);
-void        checkValue(const std::string value);
+void        checkValue(const std::string value, bool oper);
 void        checkDate(const std::string  date);
 void        checkYear(int year, int month, int day);
 bool        is_leap(int year);
