@@ -1,3 +1,15 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   BitcoinExchange.cpp                                :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: mmoumni <mmoumni@student.42.fr>            +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2023/03/21 15:13:12 by mmoumni           #+#    #+#             */
+/*   Updated: 2023/03/21 15:30:06 by mmoumni          ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "BitcoinExchange.hpp"
 
 void    getData(std::map<std::string, double, std::greater<std::string> > & BitcoinEx, std::ifstream & file, int opt)
@@ -164,6 +176,13 @@ void    checkDate(const std::string  date)
     day = getDay(date, i);
     if (year < 2009 || month < 1 || month > 12 || day > 31 || day < 1)
         throw std::runtime_error(std::string("Error in Date reprsentation " + date));
+    i = i + 2;
+    while (date[i])
+    {
+        if (date[i] != ' ')
+            throw std::runtime_error(std::string("Error in Date representation " + date));
+        i++;
+    }
     checkYear(year, month, day);
 }
 
