@@ -68,7 +68,7 @@ void    RPN(std::string numbers)
             }
         } 
     }
-    if (stack.size() > 1)
+    if (stack.size() != 1)
         throw std::runtime_error("Error");
     std::cout << stack.top() << std::endl;
 }
